@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LogisticStoreContainer" CdmEntityContainer="Logisticentities">
+    <FunctionImportMapping FunctionImportName="SerachCSDGateInData" FunctionName="Logistic.Store.SerachCSDGateInData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Logistic.SerachCSDGateInData_Result">
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="ContainerGateEntryId" ColumnName="ContainerGateEntryId" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="ChallanNo" ColumnName="ChallanNo" />
+          <ScalarProperty Name="ChallanOut" ColumnName="ChallanOut" />
+          <ScalarProperty Name="ContNo" ColumnName="ContNo" />
+          <ScalarProperty Name="ContainerTypeName" ColumnName="ContainerTypeName" />
+          <ScalarProperty Name="ContainerSize" ColumnName="ContainerSize" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="DepotName" ColumnName="DepotName" />
+          <ScalarProperty Name="TrailerNumber" ColumnName="TrailerNumber" />
+          <ScalarProperty Name="HaulierNo" ColumnName="HaulierNo" />
+          <ScalarProperty Name="InOutStatus" ColumnName="InOutStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SerachCSDGateInOutData" FunctionName="Logistic.Store.SerachCSDGateInOutData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Logistic.SerachCSDGateInOutData_Result">
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="ContainerGateEntryId" ColumnName="ContainerGateEntryId" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="ChallanNo" ColumnName="ChallanNo" />
+          <ScalarProperty Name="ChallanOut" ColumnName="ChallanOut" />
+          <ScalarProperty Name="ContNo" ColumnName="ContNo" />
+          <ScalarProperty Name="ContainerTypeName" ColumnName="ContainerTypeName" />
+          <ScalarProperty Name="ContainerSize" ColumnName="ContainerSize" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="DepotName" ColumnName="DepotName" />
+          <ScalarProperty Name="TrailerInNo" ColumnName="TrailerInNo" />
+          <ScalarProperty Name="HaulierNo" ColumnName="HaulierNo" />
+          <ScalarProperty Name="InOutStatus" ColumnName="InOutStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SerachIGMGateInOutData" FunctionName="Logistic.Store.SerachIGMGateInOutData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Logistic.SerachIGMGateInOutData_Result">
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="IGMContGateInOutId" ColumnName="IGMContGateInOutId" />
+          <ScalarProperty Name="ContainerNo" ColumnName="ContainerNo" />
+          <ScalarProperty Name="BLnumber" ColumnName="BLnumber" />
+          <ScalarProperty Name="Rotation" ColumnName="Rotation" />
+          <ScalarProperty Name="VesselName" ColumnName="VesselName" />
+          <ScalarProperty Name="ContainerSize" ColumnName="ContainerSize" />
+          <ScalarProperty Name="ContainerTypeName" ColumnName="ContainerTypeName" />
+          <ScalarProperty Name="SealNo" ColumnName="SealNo" />
+          <ScalarProperty Name="GateInDate" ColumnName="GateInDate" />
+          <ScalarProperty Name="GateOutDate" ColumnName="GateOutDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SerachIGMImportData" FunctionName="Logistic.Store.SerachIGMImportData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Logistic.SerachIGMImportData_Result">
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="IGMImportId" ColumnName="IGMImportId" />
+          <ScalarProperty Name="ReferanceNumber" ColumnName="ReferanceNumber" />
+          <ScalarProperty Name="BLnumber" ColumnName="BLnumber" />
+          <ScalarProperty Name="LineNo" ColumnName="LineNo" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CommodityName" ColumnName="CommodityName" />
+          <ScalarProperty Name="ImporterName" ColumnName="ImporterName" />
+          <ScalarProperty Name="VesselName" ColumnName="VesselName" />
+          <ScalarProperty Name="Rotation" ColumnName="Rotation" />
+          <ScalarProperty Name="BoxQuantity" ColumnName="BoxQuantity" />
+          <ScalarProperty Name="TillReceived" ColumnName="TillReceived" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ChartOfAccounts">
+      <EntityTypeMapping TypeName="Logistic.ChartOfAccount">
+        <MappingFragment StoreEntitySet="ChartOfAccount">
+          <ScalarProperty Name="BrokerBranchId" ColumnName="BrokerBranchId" />
+          <ScalarProperty Name="AccCode" ColumnName="AccCode" />
+          <ScalarProperty Name="IsLeafNode" ColumnName="IsLeafNode" />
+          <ScalarProperty Name="IsAutoPost" ColumnName="IsAutoPost" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AccountTypeId" ColumnName="AccountTypeId" />
+          <ScalarProperty Name="AccLevel" ColumnName="AccLevel" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="COAName" ColumnName="COAName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChartOfAccountTypes">
+      <EntityTypeMapping TypeName="Logistic.ChartOfAccountType">
+        <MappingFragment StoreEntitySet="ChartOfAccountType">
+          <ScalarProperty Name="AccTypeName" ColumnName="AccTypeName" />
+          <ScalarProperty Name="AccTypeID" ColumnName="AccTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoucherDetails">
+      <EntityTypeMapping TypeName="Logistic.VoucherDetail">
+        <MappingFragment StoreEntitySet="VoucherDetail">
+          <ScalarProperty Name="ProcessTrackerId" ColumnName="ProcessTrackerId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TranMode" ColumnName="TranMode" />
+          <ScalarProperty Name="DrCr" ColumnName="DrCr" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="COAId" ColumnName="COAId" />
+          <ScalarProperty Name="VoucherId" ColumnName="VoucherId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoucherMasters">
+      <EntityTypeMapping TypeName="Logistic.VoucherMaster">
+        <MappingFragment StoreEntitySet="VoucherMaster">
+          <ScalarProperty Name="PostedStatus" ColumnName="PostedStatus" />
+          <ScalarProperty Name="VoucherNumber" ColumnName="VoucherNumber" />
+          <ScalarProperty Name="ProcessTrackerId" ColumnName="ProcessTrackerId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsAutoPosted" ColumnName="IsAutoPosted" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="BrokerBranchId" ColumnName="BrokerBranchId" />
+          <ScalarProperty Name="VoucherTypeId" ColumnName="VoucherTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agents">
+      <EntityTypeMapping TypeName="Logistic.Agent">
+        <MappingFragment StoreEntitySet="Agent">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="AgentName" ColumnName="AgentName" />
+          <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+          <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="Logistic.Bank">
+        <MappingFragment StoreEntitySet="Bank">
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CargoDetails">
+      <EntityTypeMapping TypeName="Logistic.CargoDetail">
+        <MappingFragment StoreEntitySet="CargoDetails">
+          <ScalarProperty Name="IsStuffed" ColumnName="IsStuffed" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+          <ScalarProperty Name="DIV" ColumnName="DIV" />
+          <ScalarProperty Name="CAT" ColumnName="CAT" />
+          <ScalarProperty Name="REF" ColumnName="REF" />
+          <ScalarProperty Name="TPN" ColumnName="TPN" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="CargoWeight" ColumnName="CargoWeight" />
+          <ScalarProperty Name="CubicMeter" ColumnName="CubicMeter" />
+          <ScalarProperty Name="Pieces" ColumnName="Pieces" />
+          <ScalarProperty Name="Packages" ColumnName="Packages" />
+          <ScalarProperty Name="IsGarmentItem" ColumnName="IsGarmentItem" />
+          <ScalarProperty Name="IsKGs" ColumnName="IsKGs" />
+          <ScalarProperty Name="IsCBM" ColumnName="IsCBM" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="IsPCS" ColumnName="IsPCS" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="CartoonId" ColumnName="CartoonId" />
+          <ScalarProperty Name="CargoReceiveId" ColumnName="CargoReceiveId" />
+          <ScalarProperty Name="CargoDetailsId" ColumnName="CargoDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CargoRecievings">
+      <EntityTypeMapping TypeName="Logistic.CargoRecieving">
+        <MappingFragment StoreEntitySet="CargoRecieving">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="PORId" ColumnName="PORId" />
+          <ScalarProperty Name="DCode" ColumnName="DCode" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="LotClosingDate" ColumnName="LotClosingDate" />
+          <ScalarProperty Name="Lot" ColumnName="Lot" />
+          <ScalarProperty Name="DocReceiveDate" ColumnName="DocReceiveDate" />
+          <ScalarProperty Name="EFRDate" ColumnName="EFRDate" />
+          <ScalarProperty Name="EFRNo" ColumnName="EFRNo" />
+          <ScalarProperty Name="ClearForwarderId" ColumnName="ClearForwarderId" />
+          <ScalarProperty Name="FredForwarderId" ColumnName="FredForwarderId" />
+          <ScalarProperty Name="ConsigneeId" ColumnName="ConsigneeId" />
+          <ScalarProperty Name="ShipperId" ColumnName="ShipperId" />
+          <ScalarProperty Name="ReceivingDate" ColumnName="ReceivingDate" />
+          <ScalarProperty Name="SLNo" ColumnName="SLNo" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="CargoReceiveId" ColumnName="CargoReceiveId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChartOfServices">
+      <EntityTypeMapping TypeName="Logistic.ChartOfService">
+        <MappingFragment StoreEntitySet="ChartOfService">
+          <ScalarProperty Name="EntryUser" ColumnName="EntryUser" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsTransaction" ColumnName="IsTransaction" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ServiceCode" ColumnName="ServiceCode" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="CateId" ColumnName="CateId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChartOfServiceCategories">
+      <EntityTypeMapping TypeName="Logistic.ChartOfServiceCategory">
+        <MappingFragment StoreEntitySet="ChartOfServiceCategory">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CateId" ColumnName="CateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClearAndForwadingAgents">
+      <EntityTypeMapping TypeName="Logistic.ClearAndForwadingAgent">
+        <MappingFragment StoreEntitySet="ClearAndForwadingAgent">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CFAgentName" ColumnName="CFAgentName" />
+          <ScalarProperty Name="CFAgentCode" ColumnName="CFAgentCode" />
+          <ScalarProperty Name="ClearAndForwadingAgentId" ColumnName="ClearAndForwadingAgentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientBillSetups">
+      <EntityTypeMapping TypeName="Logistic.ClientBillSetup">
+        <MappingFragment StoreEntitySet="ClientBillSetup">
+          <ScalarProperty Name="Entrydate" ColumnName="Entrydate" />
+          <ScalarProperty Name="Tariff" ColumnName="Tariff" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="TrailerId" ColumnName="TrailerId" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+          <ScalarProperty Name="Amend" ColumnName="Amend" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="BillSetupId" ColumnName="BillSetupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commodities">
+      <EntityTypeMapping TypeName="Logistic.Commodity">
+        <MappingFragment StoreEntitySet="Commodity">
+          <ScalarProperty Name="CommodityName" ColumnName="CommodityName" />
+          <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyInfoes">
+      <EntityTypeMapping TypeName="Logistic.CompanyInfo">
+        <MappingFragment StoreEntitySet="CompanyInfo">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conditions">
+      <EntityTypeMapping TypeName="Logistic.Condition">
+        <MappingFragment StoreEntitySet="Condition">
+          <ScalarProperty Name="ConditionName" ColumnName="ConditionName" />
+          <ScalarProperty Name="ConditionId" ColumnName="ConditionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consignees">
+      <EntityTypeMapping TypeName="Logistic.Consignee">
+        <MappingFragment StoreEntitySet="Consignee">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ConsigneeName" ColumnName="ConsigneeName" />
+          <ScalarProperty Name="ConsigneeCode" ColumnName="ConsigneeCode" />
+          <ScalarProperty Name="ConsigneeId" ColumnName="ConsigneeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Containers">
+      <EntityTypeMapping TypeName="Logistic.Container">
+        <MappingFragment StoreEntitySet="Container">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ISO_Number" ColumnName="ISO Number" />
+          <ScalarProperty Name="ContainerTypeId" ColumnName="ContainerTypeId" />
+          <ScalarProperty Name="ContainerSizeId" ColumnName="ContainerSizeId" />
+          <ScalarProperty Name="ContainerNumber" ColumnName="ContainerNumber" />
+          <ScalarProperty Name="ContainerId" ColumnName="ContainerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContainerGrossWeights">
+      <EntityTypeMapping TypeName="Logistic.ContainerGrossWeight">
+        <MappingFragment StoreEntitySet="ContainerGrossWeight">
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="ContGrossWeightId" ColumnName="ContGrossWeightId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContainerSizes">
+      <EntityTypeMapping TypeName="Logistic.ContainerSize">
+        <MappingFragment StoreEntitySet="ContainerSize">
+          <ScalarProperty Name="ContainerSize1" ColumnName="ContainerSize" />
+          <ScalarProperty Name="ContainerSizeId" ColumnName="ContainerSizeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContainerTypes">
+      <EntityTypeMapping TypeName="Logistic.ContainerType">
+        <MappingFragment StoreEntitySet="ContainerType">
+          <ScalarProperty Name="ContainerTypeName" ColumnName="ContainerTypeName" />
+          <ScalarProperty Name="ContainerTypeId" ColumnName="ContainerTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPALocations">
+      <EntityTypeMapping TypeName="Logistic.CPALocation">
+        <MappingFragment StoreEntitySet="CPALocation">
+          <ScalarProperty Name="CPALocationName" ColumnName="CPALocationName" />
+          <ScalarProperty Name="CPALocationId" ColumnName="CPALocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CSDBillDetails">
+      <EntityTypeMapping TypeName="Logistic.CSDBillDetail">
+        <MappingFragment StoreEntitySet="CSDBillDetails">
+          <ScalarProperty Name="SummaryRefNo" ColumnName="SummaryRefNo" />
+          <ScalarProperty Name="OutTo" ColumnName="OutTo" />
+          <ScalarProperty Name="BroughtFrom" ColumnName="BroughtFrom" />
+          <ScalarProperty Name="LoadedStatus" ColumnName="LoadedStatus" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="BillTo" ColumnName="BillTo" />
+          <ScalarProperty Name="BillFrom" ColumnName="BillFrom" />
+          <ScalarProperty Name="GateOutDate" ColumnName="GateOutDate" />
+          <ScalarProperty Name="GateInDate" ColumnName="GateInDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+          <ScalarProperty Name="ContCSDRefNo" ColumnName="ContCSDRefNo" />
+          <ScalarProperty Name="ContainerNo" ColumnName="ContainerNo" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CSDBillSummaries">
+      <EntityTypeMapping TypeName="Logistic.CSDBillSummary">
+        <MappingFragment StoreEntitySet="CSDBillSummary">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="BillTo" ColumnName="BillTo" />
+          <ScalarProperty Name="BillFrom" ColumnName="BillFrom" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CSDContGateInOuts">
+      <EntityTypeMapping TypeName="Logistic.CSDContGateInOut">
+        <MappingFragment StoreEntitySet="CSDContGateInOut">
+          <ScalarProperty Name="StuffingDate" ColumnName="StuffingDate" />
+          <ScalarProperty Name="InOutStatus" ColumnName="InOutStatus" />
+          <ScalarProperty Name="RemarkOut" ColumnName="RemarkOut" />
+          <ScalarProperty Name="RemarkIn" ColumnName="RemarkIn" />
+          <ScalarProperty Name="BookingNoOut" ColumnName="BookingNoOut" />
+          <ScalarProperty Name="BookingNoDump" ColumnName="BookingNoDump" />
+          <ScalarProperty Name="DumpingDate" ColumnName="DumpingDate" />
+          <ScalarProperty Name="LoadEmptyStatusOut" ColumnName="LoadEmptyStatusOut" />
+          <ScalarProperty Name="LoadEmptyStatus" ColumnName="LoadEmptyStatus" />
+          <ScalarProperty Name="ContOutCondition" ColumnName="ContOutCondition" />
+          <ScalarProperty Name="ContInCondition" ColumnName="ContInCondition" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="UserIdGateIn" ColumnName="UserIdGateIn" />
+          <ScalarProperty Name="UserIdGateOut" ColumnName="UserIdGateOut" />
+          <ScalarProperty Name="BillTo" ColumnName="BillTo" />
+          <ScalarProperty Name="DepotFrom" ColumnName="DepotFrom" />
+          <ScalarProperty Name="DepotTo" ColumnName="DepotTo" />
+          <ScalarProperty Name="HaulierOut" ColumnName="HaulierOut" />
+          <ScalarProperty Name="HaulierIn" ColumnName="HaulierIn" />
+          <ScalarProperty Name="TrailerOutNo" ColumnName="TrailerOutNo" />
+          <ScalarProperty Name="TrailerInNo" ColumnName="TrailerInNo" />
+          <ScalarProperty Name="TrailerOut" ColumnName="TrailerOut" />
+          <ScalarProperty Name="TrailerIn" ColumnName="TrailerIn" />
+          <ScalarProperty Name="ChallanOut" ColumnName="ChallanOut" />
+          <ScalarProperty Name="ChallanNo" ColumnName="ChallanNo" />
+          <ScalarProperty Name="RotImp" ColumnName="RotImp" />
+          <ScalarProperty Name="RotExp" ColumnName="RotExp" />
+          <ScalarProperty Name="ImpVssl" ColumnName="ImpVssl" />
+          <ScalarProperty Name="ExpVssl" ColumnName="ExpVssl" />
+          <ScalarProperty Name="ISO" ColumnName="ISO" />
+          <ScalarProperty Name="ContSize" ColumnName="ContSize" />
+          <ScalarProperty Name="ContType" ColumnName="ContType" />
+          <ScalarProperty Name="InPermission" ColumnName="InPermission" />
+          <ScalarProperty Name="ContNo" ColumnName="ContNo" />
+          <ScalarProperty Name="IsFromIGMImport" ColumnName="IsFromIGMImport" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="ContainerGateEntryId" ColumnName="ContainerGateEntryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CSDGateInUPComings">
+      <EntityTypeMapping TypeName="Logistic.CSDGateInUPComing">
+        <MappingFragment StoreEntitySet="CSDGateInUPComing">
+          <ScalarProperty Name="ImportVasselName" ColumnName="ImportVasselName" />
+          <ScalarProperty Name="RotationNumber" ColumnName="RotationNumber" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+          <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+          <ScalarProperty Name="ContainerNo" ColumnName="ContainerNo" />
+          <ScalarProperty Name="MLOCode" ColumnName="MLOCode" />
+          <ScalarProperty Name="MLOID" ColumnName="MLOID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="Logistic.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="isNoBill" ColumnName="isNoBill" />
+          <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="RDA" ColumnName="RDA" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Depots">
+      <EntityTypeMapping TypeName="Logistic.Depot">
+        <MappingFragment StoreEntitySet="Depot">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="DepotName" ColumnName="DepotName" />
+          <ScalarProperty Name="DepotCode" ColumnName="DepotCode" />
+          <ScalarProperty Name="DepotId" ColumnName="DepotId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="Logistic.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FreightForwarderAgents">
+      <EntityTypeMapping TypeName="Logistic.FreightForwarderAgent">
+        <MappingFragment StoreEntitySet="FreightForwarderAgent">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FreightForwarderName" ColumnName="FreightForwarderName" />
+          <ScalarProperty Name="FreightForwarderCode" ColumnName="FreightForwarderCode" />
+          <ScalarProperty Name="FreightForwarderId" ColumnName="FreightForwarderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hauliers">
+      <EntityTypeMapping TypeName="Logistic.Haulier">
+        <MappingFragment StoreEntitySet="Haulier">
+          <ScalarProperty Name="HaulierNo" ColumnName="HaulierNo" />
+          <ScalarProperty Name="HaulierId" ColumnName="HaulierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IGMContGateInOuts">
+      <EntityTypeMapping TypeName="Logistic.IGMContGateInOut">
+        <MappingFragment StoreEntitySet="IGMContGateInOut">
+          <ScalarProperty Name="GateOutUserId" ColumnName="GateOutUserId" />
+          <ScalarProperty Name="GateInUserId" ColumnName="GateInUserId" />
+          <ScalarProperty Name="RemarksOut" ColumnName="RemarksOut" />
+          <ScalarProperty Name="RemarksIn" ColumnName="RemarksIn" />
+          <ScalarProperty Name="FreightForwarderId" ColumnName="FreightForwarderId" />
+          <ScalarProperty Name="ClearingForwarderId" ColumnName="ClearingForwarderId" />
+          <ScalarProperty Name="DeliveryType" ColumnName="DeliveryType" />
+          <ScalarProperty Name="GateOutDate" ColumnName="GateOutDate" />
+          <ScalarProperty Name="GateInDate" ColumnName="GateInDate" />
+          <ScalarProperty Name="GateOutCondition" ColumnName="GateOutCondition" />
+          <ScalarProperty Name="GateInCondition" ColumnName="GateInCondition" />
+          <ScalarProperty Name="HaulierInNo" ColumnName="HaulierInNo" />
+          <ScalarProperty Name="TrailerNumber" ColumnName="TrailerNumber" />
+          <ScalarProperty Name="TrailerId" ColumnName="TrailerId" />
+          <ScalarProperty Name="CPALockId" ColumnName="CPALockId" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="IGMDetailsId" ColumnName="IGMDetailsId" />
+          <ScalarProperty Name="IGMContGateInOutId" ColumnName="IGMContGateInOutId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IGMImports">
+      <EntityTypeMapping TypeName="Logistic.IGMImport">
+        <MappingFragment StoreEntitySet="IGMImport">
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="BoxReceived" ColumnName="BoxReceived" />
+          <ScalarProperty Name="BoxQuantity" ColumnName="BoxQuantity" />
+          <ScalarProperty Name="PortofDeliveryId" ColumnName="PortofDeliveryId" />
+          <ScalarProperty Name="PortofDischargeId" ColumnName="PortofDischargeId" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="NumberofPackage" ColumnName="NumberofPackage" />
+          <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
+          <ScalarProperty Name="Rotation" ColumnName="Rotation" />
+          <ScalarProperty Name="VesselId" ColumnName="VesselId" />
+          <ScalarProperty Name="FrieghtForwId" ColumnName="FrieghtForwId" />
+          <ScalarProperty Name="ClearandForwId" ColumnName="ClearandForwId" />
+          <ScalarProperty Name="ImporterId" ColumnName="ImporterId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="LineNo" ColumnName="LineNo" />
+          <ScalarProperty Name="BLnumber" ColumnName="BLnumber" />
+          <ScalarProperty Name="ReferanceNumber" ColumnName="ReferanceNumber" />
+          <ScalarProperty Name="IGMImportId" ColumnName="IGMImportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IGMImportDetails">
+      <EntityTypeMapping TypeName="Logistic.IGMImportDetail">
+        <MappingFragment StoreEntitySet="IGMImportDetails">
+          <ScalarProperty Name="InOutStatus" ColumnName="InOutStatus" />
+          <ScalarProperty Name="ISO" ColumnName="ISO" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+          <ScalarProperty Name="SealNo" ColumnName="SealNo" />
+          <ScalarProperty Name="ContainerNo" ColumnName="ContainerNo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IGMImportId" ColumnName="IGMImportId" />
+          <ScalarProperty Name="IGMDetailsId" ColumnName="IGMDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Importers">
+      <EntityTypeMapping TypeName="Logistic.Importer">
+        <MappingFragment StoreEntitySet="Importer">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="ImporterAddress" ColumnName="ImporterAddress" />
+          <ScalarProperty Name="ImporterName" ColumnName="ImporterName" />
+          <ScalarProperty Name="ImporterCode" ColumnName="ImporterCode" />
+          <ScalarProperty Name="ImporterId" ColumnName="ImporterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ISOMappings">
+      <EntityTypeMapping TypeName="Logistic.ISOMapping">
+        <MappingFragment StoreEntitySet="ISOMapping">
+          <ScalarProperty Name="ISOCode" ColumnName="ISOCode" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="Logistic.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoneyReceipts">
+      <EntityTypeMapping TypeName="Logistic.MoneyReceipt">
+        <MappingFragment StoreEntitySet="MoneyReceipt">
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="SavedById" ColumnName="SavedById" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="ChqPayorderNo" ColumnName="ChqPayorderNo" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="PaymentOption" ColumnName="PaymentOption" />
+          <ScalarProperty Name="RBDate" ColumnName="RBDate" />
+          <ScalarProperty Name="RiskbondNo" ColumnName="RiskbondNo" />
+          <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CandFAgentId" ColumnName="CandFAgentId" />
+          <ScalarProperty Name="MoneyReceiptNo" ColumnName="MoneyReceiptNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoneyReceiptDetails">
+      <EntityTypeMapping TypeName="Logistic.MoneyReceiptDetail">
+        <MappingFragment StoreEntitySet="MoneyReceiptDetails">
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="MoneyReceiptId" ColumnName="MoneyReceiptId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ports">
+      <EntityTypeMapping TypeName="Logistic.Port">
+        <MappingFragment StoreEntitySet="Port">
+          <ScalarProperty Name="PortCountry" ColumnName="PortCountry" />
+          <ScalarProperty Name="PortName" ColumnName="PortName" />
+          <ScalarProperty Name="PortCode" ColumnName="PortCode" />
+          <ScalarProperty Name="PortOfLandId" ColumnName="PortOfLandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shippers">
+      <EntityTypeMapping TypeName="Logistic.Shipper">
+        <MappingFragment StoreEntitySet="Shipper">
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
+          <ScalarProperty Name="ShipperCode" ColumnName="ShipperCode" />
+          <ScalarProperty Name="ShipperId" ColumnName="ShipperId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="Logistic.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StuffingDetails">
+      <EntityTypeMapping TypeName="Logistic.StuffingDetail">
+        <MappingFragment StoreEntitySet="StuffingDetails">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateById" ColumnName="UpdateById" />
+          <ScalarProperty Name="StuffingDate" ColumnName="StuffingDate" />
+          <ScalarProperty Name="StuffedById" ColumnName="StuffedById" />
+          <ScalarProperty Name="PortofDischarge" ColumnName="PortofDischarge" />
+          <ScalarProperty Name="PortofLoading" ColumnName="PortofLoading" />
+          <ScalarProperty Name="NegotiatingBank" ColumnName="NegotiatingBank" />
+          <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+          <ScalarProperty Name="ExpNo" ColumnName="ExpNo" />
+          <ScalarProperty Name="CarrierName" ColumnName="CarrierName" />
+          <ScalarProperty Name="VGMWeight" ColumnName="VGMWeight" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BookingNo" ColumnName="BookingNo" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="DayNightShift" ColumnName="DayNightShift" />
+          <ScalarProperty Name="StuffCategory" ColumnName="StuffCategory" />
+          <ScalarProperty Name="IsSub" ColumnName="IsSub" />
+          <ScalarProperty Name="TareWT" ColumnName="TareWT" />
+          <ScalarProperty Name="SealNo" ColumnName="SealNo" />
+          <ScalarProperty Name="CSDGateEntryId" ColumnName="CSDGateEntryId" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="ContainerNo" ColumnName="ContainerNo" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="CargoDetailsId" ColumnName="CargoDetailsId" />
+          <ScalarProperty Name="StuffingDetailsId" ColumnName="StuffingDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Logistic.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trailers">
+      <EntityTypeMapping TypeName="Logistic.Trailer">
+        <MappingFragment StoreEntitySet="Trailer">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="TrailerName" ColumnName="TrailerName" />
+          <ScalarProperty Name="TrailerCode" ColumnName="TrailerCode" />
+          <ScalarProperty Name="TrailerId" ColumnName="TrailerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrailerNumbers">
+      <EntityTypeMapping TypeName="Logistic.TrailerNumber">
+        <MappingFragment StoreEntitySet="TrailerNumber">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TrailerNumber1" ColumnName="TrailerNumber" />
+          <ScalarProperty Name="TrailerId" ColumnName="TrailerId" />
+          <ScalarProperty Name="TrailerNumberId" ColumnName="TrailerNumberId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnintOfMeasures">
+      <EntityTypeMapping TypeName="Logistic.UnintOfMeasure">
+        <MappingFragment StoreEntitySet="UnintOfMeasure">
+          <ScalarProperty Name="UnitOfMeasureName" ColumnName="UnitOfMeasureName" />
+          <ScalarProperty Name="UnitOfMeasureId" ColumnName="UnitOfMeasureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfoes">
+      <EntityTypeMapping TypeName="Logistic.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vessels">
+      <EntityTypeMapping TypeName="Logistic.Vessel">
+        <MappingFragment StoreEntitySet="Vessel">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="VesselName" ColumnName="VesselName" />
+          <ScalarProperty Name="VesselCode" ColumnName="VesselCode" />
+          <ScalarProperty Name="VesselId" ColumnName="VesselId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

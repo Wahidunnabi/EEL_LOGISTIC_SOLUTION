@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6677F320-5766-45A6-A7C5-3153CA1ED8DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LOGISTIC.UI</RootNamespace>
+    <AssemblyName>LOGISTIC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>LOGISTIC.UI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LOGISTIC.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\LOGISTIC.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="OFFICE, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c\OFFICE.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\ChartOfAccountEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\ChartOfAccountEntry.designer.cs">
+      <DependentUpon>ChartOfAccountEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\VoucherMasterData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\VoucherMasterData.Designer.cs">
+      <DependentUpon>VoucherMasterData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\VoucherEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\VoucherEntry.Designer.cs">
+      <DependentUpon>VoucherEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CompanyInfoUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\CompanyInfoUI.Designer.cs">
+      <DependentUpon>CompanyInfoUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\AgentEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\AgentEntry.Designer.cs">
+      <DependentUpon>AgentEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ISOMappingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ISOMappingUI.Designer.cs">
+      <DependentUpon>ISOMappingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\BankEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\BankEntry.Designer.cs">
+      <DependentUpon>BankEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\CSD\ServiceCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\CSD\ServiceCategory.Designer.cs">
+      <DependentUpon>ServiceCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\LocationEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\LocationEntry.Designer.cs">
+      <DependentUpon>LocationEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\FreightForwaderEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\FreightForwaderEntry.Designer.cs">
+      <DependentUpon>FreightForwaderEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ClearingAndForwaderEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ClearingAndForwaderEntry.Designer.cs">
+      <DependentUpon>ClearingAndForwaderEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CommodityEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\CommodityEntry.Designer.cs">
+      <DependentUpon>CommodityEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ShipperEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ShipperEntry.Designer.cs">
+      <DependentUpon>ShipperEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ConsineeEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ConsineeEntry.Designer.cs">
+      <DependentUpon>ConsineeEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CustomerEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\CustomerEntry.Designer.cs">
+      <DependentUpon>CustomerEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ImporterEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ImporterEntry.Designer.cs">
+      <DependentUpon>ImporterEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\MeasurementUnitEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\MeasurementUnitEntry.Designer.cs">
+      <DependentUpon>MeasurementUnitEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\PortEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\PortEntry.Designer.cs">
+      <DependentUpon>PortEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Haulier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\Haulier.Designer.cs">
+      <DependentUpon>Haulier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\CSD\ServiceName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\CSD\ServiceName.Designer.cs">
+      <DependentUpon>ServiceName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UserPermissionEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\UserPermissionEntry.Designer.cs">
+      <DependentUpon>UserPermissionEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\VasselEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\VasselEntry.Designer.cs">
+      <DependentUpon>VasselEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\CSD\BillOptionsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\CSD\BillOptionsUI.Designer.cs">
+      <DependentUpon>BillOptionsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\CSD\BillDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\CSD\BillDetails.Designer.cs">
+      <DependentUpon>BillDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\CSD\BillSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\CSD\BillSummary.Designer.cs">
+      <DependentUpon>BillSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\CSD\ProcessBillUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\CSD\ProcessBillUI.Designer.cs">
+      <DependentUpon>ProcessBillUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\EXPORT\EFRBillDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\EXPORT\EFRBillDetails.Designer.cs">
+      <DependentUpon>EFRBillDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\EXPORT\ExportBillCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\EXPORT\ExportBillCollection.Designer.cs">
+      <DependentUpon>ExportBillCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\EXPORT\ExportBillPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\EXPORT\ExportBillPrint.Designer.cs">
+      <DependentUpon>ExportBillPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\IMPORT\ImportBillCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\IMPORT\ImportBillCollection.Designer.cs">
+      <DependentUpon>ImportBillCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\ImpDetentionChrgSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\ImpDetentionChrgSetting.Designer.cs">
+      <DependentUpon>ImpDetentionChrgSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\IMPORT\ImportBillApprove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\IMPORT\ImportBillApprove.Designer.cs">
+      <DependentUpon>ImportBillApprove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\IMPORT\ImportBillPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\IMPORT\ImportBillPrint.Designer.cs">
+      <DependentUpon>ImportBillPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\ExportServiceDetailsEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\ExportServiceDetailsEntry.Designer.cs">
+      <DependentUpon>ExportServiceDetailsEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\ServiceDetailsEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\ServiceDetailsEntry.Designer.cs">
+      <DependentUpon>ServiceDetailsEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSD\CSDGateOutListUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSD\CSDGateOutListUpload.designer.cs">
+      <DependentUpon>CSDGateOutListUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSD\CSDUpcommingEmtyContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSD\CSDUpcommingEmtyContainer.designer.cs">
+      <DependentUpon>CSDUpcommingEmtyContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\PrintMoneyReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\PrintMoneyReceipt.Designer.cs">
+      <DependentUpon>PrintMoneyReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\MonerReceiptEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\MonerReceiptEntry.Designer.cs">
+      <DependentUpon>MonerReceiptEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Accounts\AccountsVoucherRDLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Accounts\AccountsVoucherRDLC.Designer.cs">
+      <DependentUpon>AccountsVoucherRDLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Accounts\AccountsVoucherReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Accounts\AccountsVoucherReport.Designer.cs">
+      <DependentUpon>AccountsVoucherReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CSD\CSDSearchReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\CSD\CSDSearchReport.Designer.cs">
+      <DependentUpon>CSDSearchReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSD\ContainerGateOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSD\ContainerGateOut.Designer.cs">
+      <DependentUpon>ContainerGateOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSD\ContainerGateEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSD\ContainerGateEntry.Designer.cs">
+      <DependentUpon>ContainerGateEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSD\CSDGateInListUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSD\CSDGateInListUpload.designer.cs">
+      <DependentUpon>CSDGateInListUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Export\ConsigneeDailyStuffing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Export\ConsigneeDailyStuffing.Designer.cs">
+      <DependentUpon>ConsigneeDailyStuffing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\ContainerHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\ContainerHistory.Designer.cs">
+      <DependentUpon>ContainerHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ContainerSizeUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ContainerSizeUI.Designer.cs">
+      <DependentUpon>ContainerSizeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ContainerTypeUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ContainerTypeUI.Designer.cs">
+      <DependentUpon>ContainerTypeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ContainerWeightUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ContainerWeightUI.Designer.cs">
+      <DependentUpon>ContainerWeightUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\DepotUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\DepotUI.Designer.cs">
+      <DependentUpon>DepotUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSD\CSDGateInOutData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSD\CSDGateInOutData.Designer.cs">
+      <DependentUpon>CSDGateInOutData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\CargoReceiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\CargoReceiving.Designer.cs">
+      <DependentUpon>CargoReceiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\CargoReceivingSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\CargoReceivingSearch.Designer.cs">
+      <DependentUpon>CargoReceivingSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Export\ConsigneeDailyReceived.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Export\ConsigneeDailyReceived.Designer.cs">
+      <DependentUpon>ConsigneeDailyReceived.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\TerminalReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\TerminalReceipt.Designer.cs">
+      <DependentUpon>TerminalReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\StauffingDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\StauffingDetails.Designer.cs">
+      <DependentUpon>StauffingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import\ContainerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import\ContainerSearch.Designer.cs">
+      <DependentUpon>ContainerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import\IGMBLSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import\IGMBLSearch.Designer.cs">
+      <DependentUpon>IGMBLSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Export\ExportMLOSummaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Export\ExportMLOSummaryReport.Designer.cs">
+      <DependentUpon>ExportMLOSummaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\IGMImport\ImportMLODailyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\IGMImport\ImportMLODailyReport.Designer.cs">
+      <DependentUpon>ImportMLODailyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\TrailerNumberUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\TrailerNumberUI.Designer.cs">
+      <DependentUpon>TrailerNumberUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\TrailerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\TrailerUI.Designer.cs">
+      <DependentUpon>TrailerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import\IGMGateIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import\IGMGateIn.Designer.cs">
+      <DependentUpon>IGMGateIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import\IGMGateOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import\IGMGateOut.Designer.cs">
+      <DependentUpon>IGMGateOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import\IGMInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import\IGMInput.Designer.cs">
+      <DependentUpon>IGMInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\CSD\MLODailyMovementSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\CSD\MLODailyMovementSummary.Designer.cs">
+      <DependentUpon>MLODailyMovementSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CSD\MLODailyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\CSD\MLODailyReport.Designer.cs">
+      <DependentUpon>MLODailyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\IGMImport\MLOSummaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\IGMImport\MLOSummaryReport.Designer.cs">
+      <DependentUpon>MLOSummaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\IGMImport\HoursReportTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\IGMImport\HoursReportTest.Designer.cs">
+      <DependentUpon>HoursReportTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\NumberToWords.cs" />
+    <EmbeddedResource Include="Accounts\ChartOfAccountEntry.resx">
+      <DependentUpon>ChartOfAccountEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\VoucherMasterData.resx">
+      <DependentUpon>VoucherMasterData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\VoucherEntry.resx">
+      <DependentUpon>VoucherEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\CompanyInfoUI.resx">
+      <DependentUpon>CompanyInfoUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\AgentEntry.resx">
+      <DependentUpon>AgentEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ISOMappingUI.resx">
+      <DependentUpon>ISOMappingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\BankEntry.resx">
+      <DependentUpon>BankEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\CSD\ServiceCategory.resx">
+      <DependentUpon>ServiceCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\LocationEntry.resx">
+      <DependentUpon>LocationEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\FreightForwaderEntry.resx">
+      <DependentUpon>FreightForwaderEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ClearingAndForwaderEntry.resx">
+      <DependentUpon>ClearingAndForwaderEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\CommodityEntry.resx">
+      <DependentUpon>CommodityEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ShipperEntry.resx">
+      <DependentUpon>ShipperEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ConsineeEntry.resx">
+      <DependentUpon>ConsineeEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\CustomerEntry.resx">
+      <DependentUpon>CustomerEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ImporterEntry.resx">
+      <DependentUpon>ImporterEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\MeasurementUnitEntry.resx">
+      <DependentUpon>MeasurementUnitEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\PortEntry.resx">
+      <DependentUpon>PortEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\Haulier.resx">
+      <DependentUpon>Haulier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\CSD\ServiceName.resx">
+      <DependentUpon>ServiceName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\UserPermissionEntry.resx">
+      <DependentUpon>UserPermissionEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\VasselEntry.resx">
+      <DependentUpon>VasselEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\CSD\BillOptionsUI.resx">
+      <DependentUpon>BillOptionsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\CSD\BillDetails.resx">
+      <DependentUpon>BillDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\CSD\BillSummary.resx">
+      <DependentUpon>BillSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\CSD\ProcessBillUI.resx">
+      <DependentUpon>ProcessBillUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\EXPORT\EFRBillDetails.resx">
+      <DependentUpon>EFRBillDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\EXPORT\ExportBillCollection.resx">
+      <DependentUpon>ExportBillCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\EXPORT\ExportBillPrint.resx">
+      <DependentUpon>ExportBillPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\IMPORT\ImportBillCollection.resx">
+      <DependentUpon>ImportBillCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\ImpDetentionChrgSetting.resx">
+      <DependentUpon>ImpDetentionChrgSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\IMPORT\ImportBillApprove.resx">
+      <DependentUpon>ImportBillApprove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\IMPORT\ImportBillPrint.resx">
+      <DependentUpon>ImportBillPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\ExportServiceDetailsEntry.resx">
+      <DependentUpon>ExportServiceDetailsEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\ServiceDetailsEntry.resx">
+      <DependentUpon>ServiceDetailsEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSD\CSDGateOutListUpload.resx">
+      <DependentUpon>CSDGateOutListUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSD\CSDUpcommingEmtyContainer.resx">
+      <DependentUpon>CSDUpcommingEmtyContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\PrintMoneyReceipt.resx">
+      <DependentUpon>PrintMoneyReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\MonerReceiptEntry.resx">
+      <DependentUpon>MonerReceiptEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Accounts\AccountsVoucher.rdlc" />
+    <EmbeddedResource Include="Report\Accounts\AccountsVoucherRDLC.resx">
+      <DependentUpon>AccountsVoucherRDLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Accounts\AccountsVoucherReport.resx">
+      <DependentUpon>AccountsVoucherReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Accounts\Report1.rdlc" />
+    <EmbeddedResource Include="Report\CSD\CSDSearchReport.resx">
+      <DependentUpon>CSDSearchReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSD\ContainerGateOut.resx">
+      <DependentUpon>ContainerGateOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSD\ContainerGateEntry.resx">
+      <DependentUpon>ContainerGateEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSD\CSDGateInListUpload.resx">
+      <DependentUpon>CSDGateInListUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Export\ConsigneeDailyStuffing.resx">
+      <DependentUpon>ConsigneeDailyStuffing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ContainerHistory.resx">
+      <DependentUpon>ContainerHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ContainerSizeUI.resx">
+      <DependentUpon>ContainerSizeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ContainerTypeUI.resx">
+      <DependentUpon>ContainerTypeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ContainerWeightUI.resx">
+      <DependentUpon>ContainerWeightUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\DepotUI.resx">
+      <DependentUpon>DepotUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSD\CSDGateInOutData.resx">
+      <DependentUpon>CSDGateInOutData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\CargoReceiving.resx">
+      <DependentUpon>CargoReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\CargoReceivingSearch.resx">
+      <DependentUpon>CargoReceivingSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Export\ConsigneeDailyReceived.resx">
+      <DependentUpon>ConsigneeDailyReceived.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\TerminalReceipt.resx">
+      <DependentUpon>TerminalReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\StauffingDetails.resx">
+      <DependentUpon>StauffingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import\ContainerSearch.resx">
+      <DependentUpon>ContainerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import\IGMBLSearch.resx">
+      <DependentUpon>IGMBLSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Export\ExportMLOSummaryReport.resx">
+      <DependentUpon>ExportMLOSummaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\IGMImport\ImportMLODailyReport.resx">
+      <DependentUpon>ImportMLODailyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\TrailerNumberUI.resx">
+      <DependentUpon>TrailerNumberUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\TrailerUI.resx">
+      <DependentUpon>TrailerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import\IGMGateIn.resx">
+      <DependentUpon>IGMGateIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import\IGMGateOut.resx">
+      <DependentUpon>IGMGateOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import\IGMInput.resx">
+      <DependentUpon>IGMInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\CSD\MLODailyMovementSummary.resx">
+      <DependentUpon>MLODailyMovementSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CSD\MLODailyReport.resx">
+      <DependentUpon>MLODailyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\IGMImport\MLOSummaryReport.resx">
+      <DependentUpon>MLOSummaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\IGMImport\HoursReportTest.resx">
+      <DependentUpon>HoursReportTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\LOGISTIC.UserDefinedModel.AccountsVoucherEntity.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LOGISTIC.REPORT\LOGISTIC.REPORT.csproj">
+      <Project>{9fb67f57-2357-49e5-b136-08decd7c7517}</Project>
+      <Name>LOGISTIC.REPORT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogisticBLL\LOGISTIC.BLL.csproj">
+      <Project>{960BFF98-C702-403C-B943-AA928F777895}</Project>
+      <Name>LOGISTIC.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogisticDAL\LOGISTIC.DAL.csproj">
+      <Project>{460BD61D-F652-47F4-A9C8-1733AEEA09B6}</Project>
+      <Name>LOGISTIC.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sylodium-clearing-and-freight-forwarder-19085757537.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cndf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortLogisticModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="PortLogisticEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TrailerNoLists" EntityType="PortLogisticModel.TrailerNoList" />
+  </EntityContainer>
+  <EntityType Name="TrailerNoList">
+    <Key>
+      <PropertyRef Name="TrailerId" />
+    </Key>
+    <Property Type="Int32" Name="TrailerId" Nullable="false" />
+    <Property Type="Int32" Name="TrailerCompanyId" Nullable="false" />
+    <Property Type="String" Name="TrailerNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="EntryDate" />
+    <Property Type="Int32" Name="CreatorID" />
+    <Property Type="DateTime" Name="CreateDate" />
+    <Property Type="Int32" Name="UpdateID" />
+    <Property Type="DateTime" Name="UpdateDate" />
+  </EntityType>
+</Schema>

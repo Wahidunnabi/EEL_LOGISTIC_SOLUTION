@@ -1,0 +1,2057 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Logistic.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="AccVoucherType">
+    <Key>
+      <PropertyRef Name="VoucherTypeId" />
+    </Key>
+    <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VoucherTypeId" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ChartOfAccounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ac_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parent" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="levelno" Type="int" Nullable="false" />
+    <Property Name="open_bal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="active" Type="int" Nullable="false" />
+    <Property Name="CreatId" Type="int" />
+  </EntityType>
+  <EntityType Name="ChartOfAccountType">
+    <Key>
+      <PropertyRef Name="AccTypeID" />
+    </Key>
+    <Property Name="AccTypeID" Type="int" Nullable="false" />
+    <Property Name="AccTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VoucherDetail">
+    <Key>
+      <PropertyRef Name="VoucherDtlsId" />
+    </Key>
+    <Property Name="VoucherDtlsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VoucherMstrId" Type="int" Nullable="false" />
+    <Property Name="COAId" Type="int" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="DrCr" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="TranMode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VoucherMaster">
+    <Key>
+      <PropertyRef Name="VoucherMstrId" />
+    </Key>
+    <Property Name="VoucherMstrId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VoucherTypeId" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="VoucherNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="VoucherDate" Type="date" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="IsAutoPosted" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreateUser" Type="int" />
+    <Property Name="PostedStatus" Type="int" />
+    <Property Name="BranchId" Type="int" />
+  </EntityType>
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="AgentId" />
+    </Key>
+    <Property Name="AgentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgentCode" Type="nchar" MaxLength="10" />
+    <Property Name="AgentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntryDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Branch" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CargoDetails">
+    <Key>
+      <PropertyRef Name="CargoDetailsId" />
+    </Key>
+    <Property Name="CargoDetailsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CargoReceiveId" Type="bigint" />
+    <Property Name="CartoonId" Type="nvarchar" MaxLength="10" />
+    <Property Name="ReceiveDate" Type="date" />
+    <Property Name="IsPCS" Type="bit" />
+    <Property Name="Length" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Width" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Height" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IsCBM" Type="bit" />
+    <Property Name="IsKGs" Type="bit" />
+    <Property Name="IsGarmentItem" Type="bit" />
+    <Property Name="Packages" Type="int" />
+    <Property Name="Pieces" Type="int" />
+    <Property Name="CubicMeter" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CargoWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SONumber" Type="nvarchar" MaxLength="10" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="10" />
+    <Property Name="Style" Type="nvarchar" MaxLength="10" />
+    <Property Name="Item" Type="nvarchar" MaxLength="10" />
+    <Property Name="TPN" Type="nvarchar" MaxLength="10" />
+    <Property Name="REF" Type="nvarchar" MaxLength="10" />
+    <Property Name="CAT" Type="nvarchar" MaxLength="10" />
+    <Property Name="DIV" Type="nvarchar" MaxLength="10" />
+    <Property Name="DEPT" Type="nvarchar" MaxLength="10" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsStuffed" Type="bit" />
+  </EntityType>
+  <EntityType Name="CargoRecieving">
+    <Key>
+      <PropertyRef Name="CargoReceiveId" />
+    </Key>
+    <Property Name="CargoReceiveId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustId" Type="int" Nullable="false" />
+    <Property Name="SLNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="ReceivingDate" Type="date" />
+    <Property Name="ShipperId" Type="int" />
+    <Property Name="ConsigneeId" Type="int" />
+    <Property Name="FredForwarderId" Type="int" />
+    <Property Name="ClearForwarderId" Type="int" />
+    <Property Name="EFRNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="EFRDate" Type="date" />
+    <Property Name="DocReceiveDate" Type="date" />
+    <Property Name="Lot" Type="int" />
+    <Property Name="LotClosingDate" Type="date" />
+    <Property Name="Location" Type="int" />
+    <Property Name="CommodityId" Type="int" />
+    <Property Name="Destination" Type="int" />
+    <Property Name="DCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="PORId" Type="int" />
+    <Property Name="VAT" Type="int" />
+    <Property Name="ReceivedBy" Type="int" />
+    <Property Name="GrossWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ChartOfService">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CateId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="ServiceCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="30" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="IsTransaction" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="EntryUser" Type="int" />
+  </EntityType>
+  <EntityType Name="ChartOfServiceCategory">
+    <Key>
+      <PropertyRef Name="CateId" />
+    </Key>
+    <Property Name="CateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ClearAndForwadingAgent">
+    <Key>
+      <PropertyRef Name="ClearAndForwadingAgentId" />
+    </Key>
+    <Property Name="ClearAndForwadingAgentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CFAgentCode" Type="nchar" MaxLength="10" />
+    <Property Name="CFAgentName" Type="nchar" MaxLength="50" />
+    <Property Name="Address" Type="nchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nchar" MaxLength="20" />
+    <Property Name="Fax" Type="nchar" MaxLength="20" />
+    <Property Name="Email" Type="nchar" MaxLength="20" />
+    <Property Name="Mobile" Type="nchar" MaxLength="15" />
+    <Property Name="EntryDate" Type="date" />
+  </EntityType>
+  <EntityType Name="ClientBillSetup">
+    <Key>
+      <PropertyRef Name="BillSetupId" />
+    </Key>
+    <Property Name="BillSetupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="Amend" Type="int" />
+    <Property Name="SizeId" Type="int" />
+    <Property Name="Rate" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TrailerId" Type="int" />
+    <Property Name="Location" Type="int" />
+    <Property Name="Tariff" Type="int" />
+    <Property Name="Entrydate" Type="date" />
+  </EntityType>
+  <EntityType Name="Commodity">
+    <Key>
+      <PropertyRef Name="CommodityId" />
+    </Key>
+    <Property Name="CommodityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CommodityName" Type="nchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="CompanyInfo">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyCode" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Logo" Type="image" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Condition">
+    <Key>
+      <PropertyRef Name="ConditionId" />
+    </Key>
+    <Property Name="ConditionId" Type="int" Nullable="false" />
+    <Property Name="ConditionName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Consignee">
+    <Key>
+      <PropertyRef Name="ConsigneeId" />
+    </Key>
+    <Property Name="ConsigneeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsigneeCode" Type="nchar" MaxLength="10" />
+    <Property Name="ConsigneeName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="30" />
+    <Property Name="Web" Type="nvarchar" MaxLength="30" />
+    <Property Name="EntryDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Container">
+    <Key>
+      <PropertyRef Name="ContainerId" />
+    </Key>
+    <Property Name="ContainerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContainerNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContainerSizeId" Type="int" />
+    <Property Name="ContainerTypeId" Type="int" />
+    <Property Name="ISO Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="nchar" MaxLength="10" />
+    <Property Name="EntryDate" Type="date" />
+  </EntityType>
+  <EntityType Name="ContainerGrossWeight">
+    <Key>
+      <PropertyRef Name="ContGrossWeightId" />
+    </Key>
+    <Property Name="ContGrossWeightId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GrossWeight" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PORT_LOGISTIC.dbo.Containernumber' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Containernumber">
+          <Property Name="Conptainer" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="ContainerSize">
+    <Key>
+      <PropertyRef Name="ContainerSizeId" />
+    </Key>
+    <Property Name="ContainerSizeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContainerSize" Type="int" />
+  </EntityType>
+  <EntityType Name="ContainerType">
+    <Key>
+      <PropertyRef Name="ContainerTypeId" />
+    </Key>
+    <Property Name="ContainerTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContainerTypeName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CPALocation">
+    <Key>
+      <PropertyRef Name="CPALocationId" />
+    </Key>
+    <Property Name="CPALocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPALocationName" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CSDBillDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustId" Type="int" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="ContainerNo" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="InVehicleNO" Type="nvarchar" MaxLength="200" />
+    <Property Name="OutVehicleNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContCSDRefNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="SizeId" Type="int" Nullable="false" />
+    <Property Name="Size" Type="nvarchar" MaxLength="2" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="3" />
+    <Property Name="BookingNoDump" Type="nvarchar" MaxLength="50" />
+    <Property Name="GateInDate" Type="date" Nullable="false" />
+    <Property Name="GateOutDate" Type="date" />
+    <Property Name="BillFrom" Type="date" />
+    <Property Name="BillTo" Type="date" />
+    <Property Name="HaulierIn" Type="int" />
+    <Property Name="HaulierOut" Type="int" />
+    <Property Name="Days" Type="int" />
+    <Property Name="ServiceId" Type="int" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="LoadedStatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="BroughtFrom" Type="nvarchar" MaxLength="50" />
+    <Property Name="OutTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SummaryRefNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CSDBillSummary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SummaryRefNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustId" Type="int" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Size" Type="nvarchar" MaxLength="2" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="BillFrom" Type="date" />
+    <Property Name="BillTo" Type="date" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="BillType" Type="int" />
+  </EntityType>
+  <EntityType Name="CSDContGateInOut">
+    <Key>
+      <PropertyRef Name="ContainerGateEntryId" />
+    </Key>
+    <Property Name="ContainerGateEntryId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustId" Type="int" Nullable="false" />
+    <Property Name="RefNo" Type="bigint" />
+    <Property Name="IsFromIGMImport" Type="bit" />
+    <Property Name="ContNo" Type="nvarchar" MaxLength="11" />
+    <Property Name="InPermission" Type="bit" />
+    <Property Name="ContType" Type="int" />
+    <Property Name="ContSize" Type="int" />
+    <Property Name="ISO" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExpVssl" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImpVssl" Type="nvarchar" MaxLength="30" />
+    <Property Name="RotExp" Type="nvarchar" MaxLength="15" />
+    <Property Name="RotImp" Type="nvarchar" MaxLength="15" />
+    <Property Name="ChallanNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="ChallanOut" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrailerIn" Type="int" />
+    <Property Name="TrailerOut" Type="int" />
+    <Property Name="TrailerInNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="TrailerOutNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="HaulierIn" Type="int" />
+    <Property Name="HaulierOut" Type="int" />
+    <Property Name="DepotTo" Type="int" />
+    <Property Name="DepotFrom" Type="int" />
+    <Property Name="BillTo" Type="nvarchar" MaxLength="10" />
+    <Property Name="UserIdGateOut" Type="int" />
+    <Property Name="UserIdGateIn" Type="int" />
+    <Property Name="DateIn" Type="date" />
+    <Property Name="DateOut" Type="date" />
+    <Property Name="ContInCondition" Type="int" />
+    <Property Name="ContOutCondition" Type="int" />
+    <Property Name="LoadEmptyStatus" Type="int" />
+    <Property Name="LoadEmptyStatusOut" Type="int" />
+    <Property Name="DumpingDate" Type="date" />
+    <Property Name="BookingNoDump" Type="nvarchar" MaxLength="50" />
+    <Property Name="BookingNoOut" Type="nvarchar" MaxLength="50" />
+    <Property Name="RemarkIn" Type="nvarchar" MaxLength="300" />
+    <Property Name="RemarkOut" Type="nvarchar" MaxLength="300" />
+    <Property Name="InOutStatus" Type="int" />
+    <Property Name="StuffingDate" Type="date" />
+  </EntityType>
+  <EntityType Name="CSDGateInUPComing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MLOID" Type="int" />
+    <Property Name="MLOCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContainerNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SizeId" Type="int" />
+    <Property Name="SizeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="RotationNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImportVasselName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CSDMonthlyBillProcessTrack">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="BillfromDate" Type="date" />
+    <Property Name="BillToDate" Type="date" />
+    <Property Name="MonthOffYear" Type="nchar" MaxLength="10" />
+    <Property Name="Year" Type="nchar" MaxLength="10" />
+    <Property Name="Entrydate" Type="nchar" MaxLength="10" />
+    <Property Name="UserId" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerCode" Type="nchar" MaxLength="10" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AgentId" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="25" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="25" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="25" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="RDA" Type="nvarchar" MaxLength="10" />
+    <Property Name="Type" Type="nvarchar" MaxLength="10" />
+    <Property Name="CarrierCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="isNoBill" Type="int" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="BillProcessMonthly" Type="int" />
+  </EntityType>
+  <EntityType Name="Depot">
+    <Key>
+      <PropertyRef Name="DepotId" />
+    </Key>
+    <Property Name="DepotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepotCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepotName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="ExportBill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillType" Type="int" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="EFRNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="ShipperId" Type="int" />
+    <Property Name="CandFAgentId" Type="int" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="FredForderId" Type="int" />
+    <Property Name="TotalAmount" Type="money" Nullable="false" />
+    <Property Name="DiscountAmount" Type="money" />
+    <Property Name="IsPercentage" Type="bit" />
+    <Property Name="VatPercent" Type="money" />
+    <Property Name="VatAmount" Type="money" />
+    <Property Name="GrandTotal" Type="money" Nullable="false" />
+    <Property Name="BillPrepareDate" Type="date" Nullable="false" />
+    <Property Name="SavedById" Type="int" Nullable="false" />
+    <Property Name="EditById" Type="int" />
+  </EntityType>
+  <EntityType Name="ExportBillDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillId" Type="int" Nullable="false" />
+    <Property Name="EFRNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="Size" Type="int" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Rate" Type="money" Nullable="false" />
+    <Property Name="Total" Type="money" Nullable="false" />
+    <Property Name="IsVAT" Type="bit" />
+  </EntityType>
+  <EntityType Name="ExportServiceDetail">
+    <Key>
+      <PropertyRef Name="ServiceDetailsId" />
+    </Key>
+    <Property Name="ServiceDetailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="int" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="SizeId" Type="int" />
+    <Property Name="Rate" Type="money" />
+  </EntityType>
+  <EntityType Name="FormList">
+    <Key>
+      <PropertyRef Name="FormId" />
+    </Key>
+    <Property Name="FormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FormName" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="FreightForwarderAgent">
+    <Key>
+      <PropertyRef Name="FreightForwarderId" />
+    </Key>
+    <Property Name="FreightForwarderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FreightForwarderCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="FreightForwarderName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" MaxLength="20" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Haulier">
+    <Key>
+      <PropertyRef Name="HaulierId" />
+    </Key>
+    <Property Name="HaulierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HaulierNo" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="IGMContGateInOut">
+    <Key>
+      <PropertyRef Name="IGMContGateInOutId" />
+    </Key>
+    <Property Name="IGMContGateInOutId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IGMDetailsId" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="bigint" />
+    <Property Name="CPALockId" Type="int" />
+    <Property Name="MLIId" Type="int" />
+    <Property Name="TrailerId" Type="int" />
+    <Property Name="TrailerNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="HaulierInNo" Type="int" />
+    <Property Name="GateInCondition" Type="int" />
+    <Property Name="GateOutCondition" Type="int" />
+    <Property Name="GateInDate" Type="date" />
+    <Property Name="GateOutDate" Type="date" />
+    <Property Name="DeliveryType" Type="int" />
+    <Property Name="ClearingForwarderId" Type="int" />
+    <Property Name="FreightForwarderId" Type="int" />
+    <Property Name="RemarksIn" Type="nvarchar" MaxLength="200" />
+    <Property Name="RemarksOut" Type="nvarchar" MaxLength="200" />
+    <Property Name="GateInUserId" Type="int" />
+    <Property Name="GateOutUserId" Type="int" />
+  </EntityType>
+  <EntityType Name="IGMImport">
+    <Key>
+      <PropertyRef Name="IGMImportId" />
+    </Key>
+    <Property Name="IGMImportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferanceNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="BLnumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="LineNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="ImporterId" Type="int" />
+    <Property Name="ClearandForwId" Type="int" />
+    <Property Name="FrieghtForwId" Type="int" />
+    <Property Name="VesselId" Type="int" />
+    <Property Name="Rotation" Type="nvarchar" MaxLength="20" />
+    <Property Name="CommodityId" Type="int" />
+    <Property Name="NumberofPackage" Type="int" />
+    <Property Name="UnitId" Type="int" />
+    <Property Name="GrossWeight" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PortofDischargeId" Type="int" />
+    <Property Name="PortofDeliveryId" Type="int" />
+    <Property Name="BoxQuantity" Type="int" />
+    <Property Name="BoxReceived" Type="int" />
+    <Property Name="Remarks" Type="nchar" MaxLength="500" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IGMImportDetails">
+    <Key>
+      <PropertyRef Name="IGMDetailsId" />
+    </Key>
+    <Property Name="IGMDetailsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IGMImportId" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="ContainerNo" Type="nchar" MaxLength="11" />
+    <Property Name="SealNo" Type="nchar" MaxLength="15" />
+    <Property Name="SizeId" Type="int" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="ISO" Type="nchar" MaxLength="15" />
+    <Property Name="InOutStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="ImpDetentionCharg">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SlabId" Type="int" Nullable="false" />
+    <Property Name="SizeId" Type="int" Nullable="false" />
+    <Property Name="SlabDays" Type="int" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="RateInTk" Type="int" />
+    <Property Name="RateInDlr" Type="float" />
+  </EntityType>
+  <EntityType Name="ImportBill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IGMImportId" Type="int" Nullable="false" />
+    <Property Name="ImporterId" Type="int" />
+    <Property Name="ImpInvoiceNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="BLNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CandFAgentId" Type="int" />
+    <Property Name="FreeDays" Type="int" />
+    <Property Name="TotalAmount" Type="money" Nullable="false" />
+    <Property Name="DiscountAmount" Type="money" />
+    <Property Name="IsPercentage" Type="bit" />
+    <Property Name="VatPercent" Type="money" />
+    <Property Name="VatAmount" Type="money" />
+    <Property Name="GrandTotal" Type="money" Nullable="false" />
+    <Property Name="BillPrepareDate" Type="date" Nullable="false" />
+    <Property Name="BillCalculateDate" Type="date" />
+    <Property Name="SavedById" Type="int" Nullable="false" />
+    <Property Name="Entrydate" Type="datetime" />
+    <Property Name="EditById" Type="int" />
+    <Property Name="Modifieddate" Type="datetime" />
+    <Property Name="ApprovedUserId" Type="int" />
+    <Property Name="Approveddate" Type="datetime" />
+    <Property Name="Documentstatus" Type="int" />
+    <Property Name="ApprovedStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="ImportBillDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillId" Type="int" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="ImportIndate" Type="date" />
+    <Property Name="ImportOutdate" Type="date" />
+    <Property Name="BillUnit" Type="nvarchar" MaxLength="20" />
+    <Property Name="Size" Type="int" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Days" Type="int" />
+    <Property Name="RateInTk" Type="money" />
+    <Property Name="RateInDlr" Type="money" />
+    <Property Name="Total" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Importer">
+    <Key>
+      <PropertyRef Name="ImporterId" />
+    </Key>
+    <Property Name="ImporterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImporterCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ImporterName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImporterAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="20" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="ISOMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SizeId" Type="int" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="ISOCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="MoneyReceipt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MoneyReceiptNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ReferenceNo" Type="nvarchar" MaxLength="30" />
+    <Property Name="MRType" Type="int" Nullable="false" />
+    <Property Name="CandFAgentId" Type="int" />
+    <Property Name="ImporterId" Type="int" />
+    <Property Name="ShipperId" Type="int" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="RiskbondNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="RBDate" Type="date" />
+    <Property Name="PaymentOption" Type="int" />
+    <Property Name="BankId" Type="int" />
+    <Property Name="ChqPayorderNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="IssueDate" Type="date" />
+    <Property Name="TotalAmount" Type="money" Nullable="false" />
+    <Property Name="DiscountAmount" Type="money" />
+    <Property Name="IsPercentage" Type="bit" />
+    <Property Name="VatPercent" Type="money" />
+    <Property Name="GrandTotal" Type="money" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="SavedById" Type="int" />
+  </EntityType>
+  <EntityType Name="MoneyReceiptDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MoneyReceiptId" Type="int" />
+    <Property Name="ServiceId" Type="int" />
+    <Property Name="Size" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Rate" Type="money" />
+    <Property Name="Total" Type="money" />
+  </EntityType>
+  <EntityType Name="MoneyReceiptService">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ServiceCategory" Type="int" />
+  </EntityType>
+  <EntityType Name="PatternConfig">
+    <Key>
+      <PropertyRef Name="AutoId" />
+    </Key>
+    <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConfigType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IsAutoGenCode" Type="bit" Nullable="false" />
+    <Property Name="Prefix1" Type="varchar" MaxLength="10" />
+    <Property Name="Prefix2" Type="varchar" MaxLength="10" />
+    <Property Name="Prefix3" Type="varchar" MaxLength="10" />
+    <Property Name="Suffix1" Type="varchar" MaxLength="10" />
+    <Property Name="Suffix2" Type="varchar" MaxLength="10" />
+    <Property Name="Delimiter" Type="varchar" MaxLength="1" />
+    <Property Name="DigitNumber" Type="int" Nullable="false" />
+    <Property Name="CurrentNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Port">
+    <Key>
+      <PropertyRef Name="PortOfLandId" />
+    </Key>
+    <Property Name="PortOfLandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PortCode" Type="nchar" MaxLength="10" />
+    <Property Name="PortName" Type="nchar" MaxLength="50" />
+    <Property Name="PortCountry" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ServiceCategory" Type="int" />
+  </EntityType>
+  <EntityType Name="ServiceDetails">
+    <Key>
+      <PropertyRef Name="ServiceDetailsId" />
+    </Key>
+    <Property Name="ServiceDetailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="ContSizeId" Type="int" />
+    <Property Name="RateTk" Type="float" />
+    <Property Name="RateDollar" Type="float" />
+  </EntityType>
+  <EntityType Name="Shipper">
+    <Key>
+      <PropertyRef Name="ShipperId" />
+    </Key>
+    <Property Name="ShipperId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShipperCode" Type="nchar" MaxLength="10" />
+    <Property Name="ShipperName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="25" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="25" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="25" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Web" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Slab">
+    <Key>
+      <PropertyRef Name="SlabId" />
+    </Key>
+    <Property Name="SlabId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SlabName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Days" Type="int" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="StuffingDetails">
+    <Key>
+      <PropertyRef Name="StuffingDetailsId" />
+    </Key>
+    <Property Name="StuffingDetailsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CargoDetailsId" Type="bigint" Nullable="false" />
+    <Property Name="CustId" Type="int" Nullable="false" />
+    <Property Name="ContainerNo" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="SizeId" Type="int" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="RefNo" Type="bigint" Nullable="false" />
+    <Property Name="CSDGateEntryId" Type="bigint" Nullable="false" />
+    <Property Name="SealNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="TareWT" Type="int" />
+    <Property Name="IsSub" Type="bit" />
+    <Property Name="IsReferContainer" Type="bit" />
+    <Property Name="PluginDate" Type="date" />
+    <Property Name="PTIDate" Type="date" />
+    <Property Name="StuffCategory" Type="int" />
+    <Property Name="DayNightShift" Type="int" />
+    <Property Name="Location" Type="int" />
+    <Property Name="BookingNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Status" Type="int" />
+    <Property Name="VGMWeight" Type="nvarchar" MaxLength="10" />
+    <Property Name="CarrierName" Type="nvarchar" MaxLength="10" />
+    <Property Name="ExpNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExpDate" Type="date" />
+    <Property Name="NegotiatingBank" Type="int" />
+    <Property Name="PortofLoading" Type="int" />
+    <Property Name="PortofDischarge" Type="int" />
+    <Property Name="StuffedById" Type="int" Nullable="false" />
+    <Property Name="StuffingDate" Type="date" Nullable="false" />
+    <Property Name="UpdateById" Type="nchar" MaxLength="10" />
+    <Property Name="UpdateDate" Type="date" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblDocumentstatus">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Name="DocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CatergoryId" Type="int" />
+    <Property Name="Documentstatustype" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Trailer">
+    <Key>
+      <PropertyRef Name="TrailerId" />
+    </Key>
+    <Property Name="TrailerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrailerCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="TrailerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OwnerName" Type="nchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="TrailerNumber">
+    <Key>
+      <PropertyRef Name="TrailerNumberId" />
+    </Key>
+    <Property Name="TrailerNumberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrailerId" Type="int" Nullable="false" />
+    <Property Name="TrailerNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="date" />
+  </EntityType>
+  <EntityType Name="TRReportData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TRNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="CargoReceivingId" Type="int" />
+    <Property Name="MLOId" Type="int" />
+    <Property Name="EFRNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="PortofDeliveryId" Type="int" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="UnintOfMeasure">
+    <Key>
+      <PropertyRef Name="UnitOfMeasureId" />
+    </Key>
+    <Property Name="UnitOfMeasureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitOfMeasureName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="15" />
+    <Property Name="UserType" Type="int" Nullable="false" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="image" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="ModifiedDate" Type="date" />
+    <Property Name="LoginId" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserPermissionMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="FormId" Type="int" Nullable="false" />
+    <Property Name="View" Type="bit" />
+    <Property Name="Save" Type="bit" />
+    <Property Name="Edit" Type="bit" />
+    <Property Name="Delete" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Vessel">
+    <Key>
+      <PropertyRef Name="VesselId" />
+    </Key>
+    <Property Name="VesselId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VesselCode" Type="nchar" MaxLength="20" />
+    <Property Name="VesselName" Type="nchar" MaxLength="30" />
+    <Property Name="Country" Type="nvarchar" MaxLength="20" />
+    <Property Name="EntryDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PORT_LOGISTIC.dbo.view_csdGateInOut' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_csdGateInOut">
+    <Key>
+      <PropertyRef Name="ContainerGateEntryId" />
+      <PropertyRef Name="CustId" />
+    </Key>
+    <Property Name="ContainerGateEntryId" Type="bigint" Nullable="false" />
+    <Property Name="CustId" Type="int" Nullable="false" />
+    <Property Name="RefNo" Type="bigint" />
+    <Property Name="IsFromIGMImport" Type="bit" />
+    <Property Name="ContNo" Type="nvarchar" MaxLength="11" />
+    <Property Name="InPermission" Type="bit" />
+    <Property Name="ContType" Type="int" />
+    <Property Name="ContSize" Type="int" />
+    <Property Name="ISO" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExpVssl" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImpVssl" Type="nvarchar" MaxLength="30" />
+    <Property Name="RotExp" Type="nvarchar" MaxLength="15" />
+    <Property Name="RotImp" Type="nvarchar" MaxLength="15" />
+    <Property Name="ChallanNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="ChallanOut" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrailerIn" Type="int" />
+    <Property Name="TrailerOut" Type="int" />
+    <Property Name="TrailerInNo" Type="int" />
+    <Property Name="TrailerOutNo" Type="int" />
+    <Property Name="HaulierIn" Type="int" />
+    <Property Name="HaulierOut" Type="int" />
+    <Property Name="DepotTo" Type="int" />
+    <Property Name="DepotFrom" Type="int" />
+    <Property Name="BillTo" Type="nvarchar" MaxLength="10" />
+    <Property Name="UserIdGateOut" Type="int" />
+    <Property Name="UserIdGateIn" Type="int" />
+    <Property Name="DateIn" Type="datetime" />
+    <Property Name="DateOut" Type="datetime" />
+    <Property Name="ContInCondition" Type="int" />
+    <Property Name="ContOutCondition" Type="int" />
+    <Property Name="LoadEmptyStatus" Type="int" />
+    <Property Name="LoadEmptyStatusOut" Type="int" />
+    <Property Name="DumpingDate" Type="date" />
+    <Property Name="BookingNoDump" Type="nvarchar" MaxLength="50" />
+    <Property Name="BookingNoOut" Type="nvarchar" MaxLength="50" />
+    <Property Name="RemarkIn" Type="nvarchar" MaxLength="300" />
+    <Property Name="RemarkOut" Type="nvarchar" MaxLength="300" />
+    <Property Name="InOutStatus" Type="int" />
+    <Property Name="StuffingDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PORT_LOGISTIC.dbo.Vw_DISTINCTGATEENTRY_STUFFING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_DISTINCTGATEENTRY_STUFFING">
+    <Key>
+      <PropertyRef Name="CSDGateEntryId" />
+      <PropertyRef Name="StuffingDate" />
+    </Key>
+    <Property Name="CSDGateEntryId" Type="bigint" Nullable="false" />
+    <Property Name="BookingNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="StuffingDate" Type="date" Nullable="false" />
+    <Property Name="SealNo" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <Association Name="FK_CargoDetails_CargoRecieving">
+    <End Role="CargoRecieving" Type="Self.CargoRecieving" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CargoDetails" Type="Self.CargoDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CargoRecieving">
+        <PropertyRef Name="CargoReceiveId" />
+      </Principal>
+      <Dependent Role="CargoDetails">
+        <PropertyRef Name="CargoReceiveId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChartOfService_ChartOfServiceCategory">
+    <End Role="ChartOfServiceCategory" Type="Self.ChartOfServiceCategory" Multiplicity="0..1" />
+    <End Role="ChartOfService" Type="Self.ChartOfService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChartOfServiceCategory">
+        <PropertyRef Name="CateId" />
+      </Principal>
+      <Dependent Role="ChartOfService">
+        <PropertyRef Name="CateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientBillSetup_ChartOfService">
+    <End Role="ChartOfService" Type="Self.ChartOfService" Multiplicity="1" />
+    <End Role="ClientBillSetup" Type="Self.ClientBillSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChartOfService">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="ClientBillSetup">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientBillSetup_ContainerSize">
+    <End Role="ContainerSize" Type="Self.ContainerSize" Multiplicity="0..1" />
+    <End Role="ClientBillSetup" Type="Self.ClientBillSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerSize">
+        <PropertyRef Name="ContainerSizeId" />
+      </Principal>
+      <Dependent Role="ClientBillSetup">
+        <PropertyRef Name="SizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSDContGateInOut_ContainerSize">
+    <End Role="ContainerSize" Type="Self.ContainerSize" Multiplicity="0..1" />
+    <End Role="CSDContGateInOut" Type="Self.CSDContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerSize">
+        <PropertyRef Name="ContainerSizeId" />
+      </Principal>
+      <Dependent Role="CSDContGateInOut">
+        <PropertyRef Name="ContSize" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSDContGateInOut_ContainerType">
+    <End Role="ContainerType" Type="Self.ContainerType" Multiplicity="0..1" />
+    <End Role="CSDContGateInOut" Type="Self.CSDContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerType">
+        <PropertyRef Name="ContainerTypeId" />
+      </Principal>
+      <Dependent Role="CSDContGateInOut">
+        <PropertyRef Name="ContType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSDContGateInOut_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CSDContGateInOut" Type="Self.CSDContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CSDContGateInOut">
+        <PropertyRef Name="CustId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSDContGateInOut_Haulier">
+    <End Role="Haulier" Type="Self.Haulier" Multiplicity="0..1" />
+    <End Role="CSDContGateInOut" Type="Self.CSDContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Haulier">
+        <PropertyRef Name="HaulierId" />
+      </Principal>
+      <Dependent Role="CSDContGateInOut">
+        <PropertyRef Name="HaulierIn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Agent">
+    <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Agent">
+        <PropertyRef Name="AgentId" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="AgentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_CompanyInfo">
+    <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyInfo">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportBillDetails_ExportBill">
+    <End Role="ExportBill" Type="Self.ExportBill" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ExportBillDetails" Type="Self.ExportBillDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExportBill">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ExportBillDetails">
+        <PropertyRef Name="BillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMContGateInOut_IGMImportDetails">
+    <End Role="IGMImportDetails" Type="Self.IGMImportDetails" Multiplicity="1" />
+    <End Role="IGMContGateInOut" Type="Self.IGMContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IGMImportDetails">
+        <PropertyRef Name="IGMDetailsId" />
+      </Principal>
+      <Dependent Role="IGMContGateInOut">
+        <PropertyRef Name="IGMDetailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImport_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="IGMImport" Type="Self.IGMImport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="IGMImport">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImport_UnintOfMeasure">
+    <End Role="UnintOfMeasure" Type="Self.UnintOfMeasure" Multiplicity="0..1" />
+    <End Role="IGMImport" Type="Self.IGMImport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnintOfMeasure">
+        <PropertyRef Name="UnitOfMeasureId" />
+      </Principal>
+      <Dependent Role="IGMImport">
+        <PropertyRef Name="UnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImport_Vessel">
+    <End Role="Vessel" Type="Self.Vessel" Multiplicity="0..1" />
+    <End Role="IGMImport" Type="Self.IGMImport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vessel">
+        <PropertyRef Name="VesselId" />
+      </Principal>
+      <Dependent Role="IGMImport">
+        <PropertyRef Name="VesselId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImportDetails_ContainerSize">
+    <End Role="ContainerSize" Type="Self.ContainerSize" Multiplicity="0..1" />
+    <End Role="IGMImportDetails" Type="Self.IGMImportDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerSize">
+        <PropertyRef Name="ContainerSizeId" />
+      </Principal>
+      <Dependent Role="IGMImportDetails">
+        <PropertyRef Name="SizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImportDetails_ContainerType">
+    <End Role="ContainerType" Type="Self.ContainerType" Multiplicity="0..1" />
+    <End Role="IGMImportDetails" Type="Self.IGMImportDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerType">
+        <PropertyRef Name="ContainerTypeId" />
+      </Principal>
+      <Dependent Role="IGMImportDetails">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImportDetails_IGMImport">
+    <End Role="IGMImport" Type="Self.IGMImport" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IGMImportDetails" Type="Self.IGMImportDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IGMImport">
+        <PropertyRef Name="IGMImportId" />
+      </Principal>
+      <Dependent Role="IGMImportDetails">
+        <PropertyRef Name="IGMImportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportBillDetails_ImportBill">
+    <End Role="ImportBill" Type="Self.ImportBill" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ImportBillDetails" Type="Self.ImportBillDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImportBill">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ImportBillDetails">
+        <PropertyRef Name="BillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ISOMapping_ContainerSize">
+    <End Role="ContainerSize" Type="Self.ContainerSize" Multiplicity="1" />
+    <End Role="ISOMapping" Type="Self.ISOMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerSize">
+        <PropertyRef Name="ContainerSizeId" />
+      </Principal>
+      <Dependent Role="ISOMapping">
+        <PropertyRef Name="SizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ISOMapping_ContainerType">
+    <End Role="ContainerType" Type="Self.ContainerType" Multiplicity="1" />
+    <End Role="ISOMapping" Type="Self.ISOMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerType">
+        <PropertyRef Name="ContainerTypeId" />
+      </Principal>
+      <Dependent Role="ISOMapping">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MoneyReceiptDetails_MoneyReceipt">
+    <End Role="MoneyReceipt" Type="Self.MoneyReceipt" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MoneyReceiptDetails" Type="Self.MoneyReceiptDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MoneyReceipt">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MoneyReceiptDetails">
+        <PropertyRef Name="MoneyReceiptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceDetails_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="ServiceDetails" Type="Self.ServiceDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ServiceDetails">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StuffingDetails_CargoDetails">
+    <End Role="CargoDetails" Type="Self.CargoDetails" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StuffingDetails" Type="Self.StuffingDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CargoDetails">
+        <PropertyRef Name="CargoDetailsId" />
+      </Principal>
+      <Dependent Role="StuffingDetails">
+        <PropertyRef Name="CargoDetailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TrailerNumber_Trailer">
+    <End Role="Trailer" Type="Self.Trailer" Multiplicity="1" />
+    <End Role="TrailerNumber" Type="Self.TrailerNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trailer">
+        <PropertyRef Name="TrailerId" />
+      </Principal>
+      <Dependent Role="TrailerNumber">
+        <PropertyRef Name="TrailerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermissionMapping_FormList">
+    <End Role="FormList" Type="Self.FormList" Multiplicity="1" />
+    <End Role="UserPermissionMapping" Type="Self.UserPermissionMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FormList">
+        <PropertyRef Name="FormId" />
+      </Principal>
+      <Dependent Role="UserPermissionMapping">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermissionMapping_UserRole">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="1" />
+    <End Role="UserPermissionMapping" Type="Self.UserPermissionMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UserPermissionMapping">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VoucherDetail_VoucherMaster">
+    <End Role="VoucherMaster" Type="Self.VoucherMaster" Multiplicity="1" />
+    <End Role="VoucherDetail" Type="Self.VoucherDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VoucherMaster">
+        <PropertyRef Name="VoucherMstrId" />
+      </Principal>
+      <Dependent Role="VoucherDetail">
+        <PropertyRef Name="VoucherMstrId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CompanyHead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fromdate" Type="date" Mode="In" />
+    <Parameter Name="Todate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSD_DateRange_FilterReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Size" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="int" Mode="In" />
+    <Parameter Name="DepotFrom" Type="int" Mode="In" />
+    <Parameter Name="DepotTo" Type="int" Mode="In" />
+    <Parameter Name="TrailerInId" Type="int" Mode="In" />
+    <Parameter Name="TrailerOutId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_DateRange_Inward_Movement_TopReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Size" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="int" Mode="In" />
+    <Parameter Name="DepotFrom" Type="int" Mode="In" />
+    <Parameter Name="DepotTo" Type="int" Mode="In" />
+    <Parameter Name="TrailerInId" Type="int" Mode="In" />
+    <Parameter Name="TrailerOutId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_DateRange_Inward_MovementReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Size" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="int" Mode="In" />
+    <Parameter Name="DepotFrom" Type="int" Mode="In" />
+    <Parameter Name="DepotTo" Type="int" Mode="In" />
+    <Parameter Name="TrailerInId" Type="int" Mode="In" />
+    <Parameter Name="TrailerOutId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_DateRange_MovementReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Size" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="int" Mode="In" />
+    <Parameter Name="DepotFrom" Type="int" Mode="In" />
+    <Parameter Name="DepotTo" Type="int" Mode="In" />
+    <Parameter Name="TrailerInId" Type="int" Mode="In" />
+    <Parameter Name="TrailerOutId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_DateRange_OutWard_Movement_TopReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Size" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="int" Mode="In" />
+    <Parameter Name="DepotFrom" Type="int" Mode="In" />
+    <Parameter Name="DepotTo" Type="int" Mode="In" />
+    <Parameter Name="TrailerInId" Type="int" Mode="In" />
+    <Parameter Name="TrailerOutId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_DateRange_OutWard_MovementReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Size" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="int" Mode="In" />
+    <Parameter Name="DepotFrom" Type="int" Mode="In" />
+    <Parameter Name="DepotTo" Type="int" Mode="In" />
+    <Parameter Name="TrailerInId" Type="int" Mode="In" />
+    <Parameter Name="TrailerOutId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_GateInChalan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CSDID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="CSD_GateOutChalan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CSDID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_DailyInwardMovementSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="SizeId" Type="int" Mode="In" />
+    <Parameter Name="TypeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_DailyInwardMovementSummary_old" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_DailyOutwardMovementSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="SizeId" Type="int" Mode="In" />
+    <Parameter Name="TypeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_DailyOutwardMovementSummary_old" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_DailyStockSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_Wise_DailyReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="TypeName" Type="int" Mode="In" />
+    <Parameter Name="SizeId" Type="int" Mode="In" />
+    <Parameter Name="TypeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_Wise_DailyReport_old" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="TypeName" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_Wise_StockReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_WiseDaily_Inward_ConditionReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_WiseDaily_InwardReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_WiseDaily_InwardTopReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_WiseDaily_OutwardReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLO_WiseDaily_OutwardTopReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSD_MLOWise_BillReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="RefNo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="CSD_Monthly_AllClient_BILLProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+    <Parameter Name="VATPerchant" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="CSD_Stock_MovementReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="Size" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="int" Mode="In" />
+    <Parameter Name="DepotFrom" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBillDetailsExport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CusId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="Todate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBillDetailsExportToGetSummery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CusId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="Todate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBillDetailsExportwithTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CusId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="Todate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBillDetailsMLOTopSheet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CusId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="Todate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBILLProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+    <Parameter Name="VATPerchant" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBILLProcess_x_14092019" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+    <Parameter Name="VATPerchant" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBILLProcess_X_18092019" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+    <Parameter Name="VATPerchant" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBILLProcess_X16092019" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+    <Parameter Name="VATPerchant" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBillSummery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CusId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="Todate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CSDMonthlyBIllUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+    <Parameter Name="RefNo" Type="varchar" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+    <Parameter Name="VATPerchant" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="CSDOutBILLProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+    <Parameter Name="VATPerchant" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="EXPORT_ConsigneeWise_DailyReceiving" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ConsigneeId" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="varchar" Mode="In" />
+    <Parameter Name="ContainerSize" Type="varchar" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="EXPORT_ConsigneeWise_DailyStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ConsigneeId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="EXPORT_ConsigneeWise_DailyStuffing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ConsigneeId" Type="int" Mode="In" />
+    <Parameter Name="ShipperId" Type="int" Mode="In" />
+    <Parameter Name="frieghtForwarderId" Type="int" Mode="In" />
+    <Parameter Name="EFRNO" Type="varchar" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Export_DaililyContainerStuffingSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="varchar" Mode="In" />
+    <Parameter Name="ContainerSize" Type="varchar" Mode="In" />
+    <Parameter Name="ContainerType" Type="varchar" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="EXPORT_EFRWiseBillDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EFRNO" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Export_MLO_FFarwarder_SummeryGrid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MLOID" Type="int" Mode="In" />
+    <Parameter Name="FFId" Type="int" Mode="In" />
+    <Parameter Name="fromStuffingdate" Type="date" Mode="In" />
+    <Parameter Name="Tostuffingdate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Export_MLO_FFarwarder_SummeryGridSum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MLOID" Type="int" Mode="In" />
+    <Parameter Name="FFId" Type="int" Mode="In" />
+    <Parameter Name="fromStuffingdate" Type="date" Mode="In" />
+    <Parameter Name="Tostuffingdate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Export_StuffingSummaryForBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="EXPORT_TRReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TRId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ExportMLOWiseServiceBillCalculation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MLOId" Type="int" Mode="In" />
+    <Parameter Name="ServiceId" Type="int" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ExportStuffingDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BillType" Type="int" Mode="In" />
+    <Parameter Name="MloFordId" Type="int" Mode="In" />
+    <Parameter Name="EFRNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ExportStuffingDetailsWithService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BillType" Type="int" Mode="In" />
+    <Parameter Name="MloFordId" Type="int" Mode="In" />
+    <Parameter Name="EFRNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="Todate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="Get_Indate_and_Size_and_BL_WiseSummery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Blnumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Get_Indatewise_ImportContainer_Position" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Blnumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAllCargoReceivingData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAllCSDBillDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllCSDGateInOutData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAllExportBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAllIGMGateInData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAllIGMGateOutData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAllIGMImport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAllImportBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAllImportBillforApprove" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAllMoneyReceipt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetCompanyinfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetContainerHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CSDId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCSDGateInData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetCSDGateOutData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetImportMonthlyReceivingReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="Month" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMLOWiseContainerStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="TypeName" Type="varchar" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetMLOWiseDailyImportLadenStockSummary_" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetMLOWiseDailyImportLadenStockSummary ">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Import_ContainetSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="varchar" Mode="In" />
+    <Parameter Name="ContainerSize" Type="varchar" Mode="In" />
+    <Parameter Name="SortBy" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Import_MLO_Wise_DailyInOutStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="ContainerNo" Type="varchar" Mode="In" />
+    <Parameter Name="ContainerSize" Type="varchar" Mode="In" />
+    <Parameter Name="Blno" Type="varchar" Mode="In" />
+    <Parameter Name="commdityId" Type="int" Mode="In" />
+    <Parameter Name="ImporterId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="TypeName" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Import_MLOWise_DailyReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Import_MLOWise_ImportSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ImportDeliveryPackageCalculation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IGMIdAgainstBl" Type="int" Mode="In" />
+    <Parameter Name="ServiceId" Type="int" Mode="In" />
+    <Parameter Name="RateBDT" Type="real" Mode="In" />
+    <Parameter Name="UptoDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ImportDetentionCalculation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IGMId" Type="int" Mode="In" />
+    <Parameter Name="freeday" Type="int" Mode="In" />
+    <Parameter Name="UptoDate" Type="date" Mode="In" />
+    <Parameter Name="RateInTk" Type="money" Mode="In" />
+  </Function>
+  <Function Name="MLOWiseDailyInwardReportCSD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="PrintMoneyReceipt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MRId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SerachCSDGateInData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchBy" Type="int" Mode="In" />
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SerachCSDGateInOutData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchBy" Type="int" Mode="In" />
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SerachIGMGateInOutData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchBy" Type="int" Mode="In" />
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SerachIGMImportData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchBy" Type="int" Mode="In" />
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetPatternConfig" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ConfigType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="LogisticStoreContainer">
+    <EntitySet Name="AccVoucherType" EntityType="Self.AccVoucherType" Schema="Accounts" store:Type="Tables" />
+    <EntitySet Name="ChartOfAccounts" EntityType="Self.ChartOfAccounts" Schema="Accounts" store:Type="Tables" />
+    <EntitySet Name="ChartOfAccountType" EntityType="Self.ChartOfAccountType" Schema="Accounts" store:Type="Tables" />
+    <EntitySet Name="VoucherDetail" EntityType="Self.VoucherDetail" Schema="Accounts" store:Type="Tables" />
+    <EntitySet Name="VoucherMaster" EntityType="Self.VoucherMaster" Schema="Accounts" store:Type="Tables" />
+    <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CargoDetails" EntityType="Self.CargoDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CargoRecieving" EntityType="Self.CargoRecieving" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChartOfService" EntityType="Self.ChartOfService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChartOfServiceCategory" EntityType="Self.ChartOfServiceCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClearAndForwadingAgent" EntityType="Self.ClearAndForwadingAgent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientBillSetup" EntityType="Self.ClientBillSetup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Commodity" EntityType="Self.Commodity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Condition" EntityType="Self.Condition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consignee" EntityType="Self.Consignee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Container" EntityType="Self.Container" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContainerGrossWeight" EntityType="Self.ContainerGrossWeight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContainerSize" EntityType="Self.ContainerSize" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContainerType" EntityType="Self.ContainerType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPALocation" EntityType="Self.CPALocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CSDBillDetails" EntityType="Self.CSDBillDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CSDBillSummary" EntityType="Self.CSDBillSummary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CSDContGateInOut" EntityType="Self.CSDContGateInOut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CSDGateInUPComing" EntityType="Self.CSDGateInUPComing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CSDMonthlyBillProcessTrack" EntityType="Self.CSDMonthlyBillProcessTrack" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Depot" EntityType="Self.Depot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExportBill" EntityType="Self.ExportBill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExportBillDetails" EntityType="Self.ExportBillDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExportServiceDetail" EntityType="Self.ExportServiceDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormList" EntityType="Self.FormList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FreightForwarderAgent" EntityType="Self.FreightForwarderAgent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Haulier" EntityType="Self.Haulier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IGMContGateInOut" EntityType="Self.IGMContGateInOut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IGMImport" EntityType="Self.IGMImport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IGMImportDetails" EntityType="Self.IGMImportDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImpDetentionCharg" EntityType="Self.ImpDetentionCharg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImportBill" EntityType="Self.ImportBill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImportBillDetails" EntityType="Self.ImportBillDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Importer" EntityType="Self.Importer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ISOMapping" EntityType="Self.ISOMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MoneyReceipt" EntityType="Self.MoneyReceipt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MoneyReceiptDetails" EntityType="Self.MoneyReceiptDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MoneyReceiptService" EntityType="Self.MoneyReceiptService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatternConfig" EntityType="Self.PatternConfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Port" EntityType="Self.Port" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceDetails" EntityType="Self.ServiceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shipper" EntityType="Self.Shipper" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slab" EntityType="Self.Slab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StuffingDetails" EntityType="Self.StuffingDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDocumentstatus" EntityType="Self.tblDocumentstatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trailer" EntityType="Self.Trailer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrailerNumber" EntityType="Self.TrailerNumber" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRReportData" EntityType="Self.TRReportData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnintOfMeasure" EntityType="Self.UnintOfMeasure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermissionMapping" EntityType="Self.UserPermissionMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vessel" EntityType="Self.Vessel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="view_csdGateInOut" EntityType="Self.view_csdGateInOut" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[view_csdGateInOut].[ContainerGateEntryId] AS [ContainerGateEntryId], 
+[view_csdGateInOut].[CustId] AS [CustId], 
+[view_csdGateInOut].[RefNo] AS [RefNo], 
+[view_csdGateInOut].[IsFromIGMImport] AS [IsFromIGMImport], 
+[view_csdGateInOut].[ContNo] AS [ContNo], 
+[view_csdGateInOut].[InPermission] AS [InPermission], 
+[view_csdGateInOut].[ContType] AS [ContType], 
+[view_csdGateInOut].[ContSize] AS [ContSize], 
+[view_csdGateInOut].[ISO] AS [ISO], 
+[view_csdGateInOut].[ExpVssl] AS [ExpVssl], 
+[view_csdGateInOut].[ImpVssl] AS [ImpVssl], 
+[view_csdGateInOut].[RotExp] AS [RotExp], 
+[view_csdGateInOut].[RotImp] AS [RotImp], 
+[view_csdGateInOut].[ChallanNo] AS [ChallanNo], 
+[view_csdGateInOut].[ChallanOut] AS [ChallanOut], 
+[view_csdGateInOut].[TrailerIn] AS [TrailerIn], 
+[view_csdGateInOut].[TrailerOut] AS [TrailerOut], 
+[view_csdGateInOut].[TrailerInNo] AS [TrailerInNo], 
+[view_csdGateInOut].[TrailerOutNo] AS [TrailerOutNo], 
+[view_csdGateInOut].[HaulierIn] AS [HaulierIn], 
+[view_csdGateInOut].[HaulierOut] AS [HaulierOut], 
+[view_csdGateInOut].[DepotTo] AS [DepotTo], 
+[view_csdGateInOut].[DepotFrom] AS [DepotFrom], 
+[view_csdGateInOut].[BillTo] AS [BillTo], 
+[view_csdGateInOut].[UserIdGateOut] AS [UserIdGateOut], 
+[view_csdGateInOut].[UserIdGateIn] AS [UserIdGateIn], 
+[view_csdGateInOut].[DateIn] AS [DateIn], 
+[view_csdGateInOut].[DateOut] AS [DateOut], 
+[view_csdGateInOut].[ContInCondition] AS [ContInCondition], 
+[view_csdGateInOut].[ContOutCondition] AS [ContOutCondition], 
+[view_csdGateInOut].[LoadEmptyStatus] AS [LoadEmptyStatus], 
+[view_csdGateInOut].[LoadEmptyStatusOut] AS [LoadEmptyStatusOut], 
+[view_csdGateInOut].[DumpingDate] AS [DumpingDate], 
+[view_csdGateInOut].[BookingNoDump] AS [BookingNoDump], 
+[view_csdGateInOut].[BookingNoOut] AS [BookingNoOut], 
+[view_csdGateInOut].[RemarkIn] AS [RemarkIn], 
+[view_csdGateInOut].[RemarkOut] AS [RemarkOut], 
+[view_csdGateInOut].[InOutStatus] AS [InOutStatus], 
+[view_csdGateInOut].[StuffingDate] AS [StuffingDate]
+FROM [dbo].[view_csdGateInOut] AS [view_csdGateInOut]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_DISTINCTGATEENTRY_STUFFING" EntityType="Self.Vw_DISTINCTGATEENTRY_STUFFING" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Vw_DISTINCTGATEENTRY_STUFFING].[CSDGateEntryId] AS [CSDGateEntryId], 
+[Vw_DISTINCTGATEENTRY_STUFFING].[BookingNo] AS [BookingNo], 
+[Vw_DISTINCTGATEENTRY_STUFFING].[StuffingDate] AS [StuffingDate], 
+[Vw_DISTINCTGATEENTRY_STUFFING].[SealNo] AS [SealNo]
+FROM [dbo].[Vw_DISTINCTGATEENTRY_STUFFING] AS [Vw_DISTINCTGATEENTRY_STUFFING]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_CargoDetails_CargoRecieving" Association="Self.FK_CargoDetails_CargoRecieving">
+      <End Role="CargoRecieving" EntitySet="CargoRecieving" />
+      <End Role="CargoDetails" EntitySet="CargoDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChartOfService_ChartOfServiceCategory" Association="Self.FK_ChartOfService_ChartOfServiceCategory">
+      <End Role="ChartOfServiceCategory" EntitySet="ChartOfServiceCategory" />
+      <End Role="ChartOfService" EntitySet="ChartOfService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientBillSetup_ChartOfService" Association="Self.FK_ClientBillSetup_ChartOfService">
+      <End Role="ChartOfService" EntitySet="ChartOfService" />
+      <End Role="ClientBillSetup" EntitySet="ClientBillSetup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientBillSetup_ContainerSize" Association="Self.FK_ClientBillSetup_ContainerSize">
+      <End Role="ContainerSize" EntitySet="ContainerSize" />
+      <End Role="ClientBillSetup" EntitySet="ClientBillSetup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSDContGateInOut_ContainerSize" Association="Self.FK_CSDContGateInOut_ContainerSize">
+      <End Role="ContainerSize" EntitySet="ContainerSize" />
+      <End Role="CSDContGateInOut" EntitySet="CSDContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSDContGateInOut_ContainerType" Association="Self.FK_CSDContGateInOut_ContainerType">
+      <End Role="ContainerType" EntitySet="ContainerType" />
+      <End Role="CSDContGateInOut" EntitySet="CSDContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSDContGateInOut_Customer" Association="Self.FK_CSDContGateInOut_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CSDContGateInOut" EntitySet="CSDContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSDContGateInOut_Haulier" Association="Self.FK_CSDContGateInOut_Haulier">
+      <End Role="Haulier" EntitySet="Haulier" />
+      <End Role="CSDContGateInOut" EntitySet="CSDContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Agent" Association="Self.FK_Customer_Agent">
+      <End Role="Agent" EntitySet="Agent" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_CompanyInfo" Association="Self.FK_Employee_CompanyInfo">
+      <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportBillDetails_ExportBill" Association="Self.FK_ExportBillDetails_ExportBill">
+      <End Role="ExportBill" EntitySet="ExportBill" />
+      <End Role="ExportBillDetails" EntitySet="ExportBillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMContGateInOut_IGMImportDetails" Association="Self.FK_IGMContGateInOut_IGMImportDetails">
+      <End Role="IGMImportDetails" EntitySet="IGMImportDetails" />
+      <End Role="IGMContGateInOut" EntitySet="IGMContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImport_Customer" Association="Self.FK_IGMImport_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="IGMImport" EntitySet="IGMImport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImport_UnintOfMeasure" Association="Self.FK_IGMImport_UnintOfMeasure">
+      <End Role="UnintOfMeasure" EntitySet="UnintOfMeasure" />
+      <End Role="IGMImport" EntitySet="IGMImport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImport_Vessel" Association="Self.FK_IGMImport_Vessel">
+      <End Role="Vessel" EntitySet="Vessel" />
+      <End Role="IGMImport" EntitySet="IGMImport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImportDetails_ContainerSize" Association="Self.FK_IGMImportDetails_ContainerSize">
+      <End Role="ContainerSize" EntitySet="ContainerSize" />
+      <End Role="IGMImportDetails" EntitySet="IGMImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImportDetails_ContainerType" Association="Self.FK_IGMImportDetails_ContainerType">
+      <End Role="ContainerType" EntitySet="ContainerType" />
+      <End Role="IGMImportDetails" EntitySet="IGMImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImportDetails_IGMImport" Association="Self.FK_IGMImportDetails_IGMImport">
+      <End Role="IGMImport" EntitySet="IGMImport" />
+      <End Role="IGMImportDetails" EntitySet="IGMImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportBillDetails_ImportBill" Association="Self.FK_ImportBillDetails_ImportBill">
+      <End Role="ImportBill" EntitySet="ImportBill" />
+      <End Role="ImportBillDetails" EntitySet="ImportBillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ISOMapping_ContainerSize" Association="Self.FK_ISOMapping_ContainerSize">
+      <End Role="ContainerSize" EntitySet="ContainerSize" />
+      <End Role="ISOMapping" EntitySet="ISOMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ISOMapping_ContainerType" Association="Self.FK_ISOMapping_ContainerType">
+      <End Role="ContainerType" EntitySet="ContainerType" />
+      <End Role="ISOMapping" EntitySet="ISOMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MoneyReceiptDetails_MoneyReceipt" Association="Self.FK_MoneyReceiptDetails_MoneyReceipt">
+      <End Role="MoneyReceipt" EntitySet="MoneyReceipt" />
+      <End Role="MoneyReceiptDetails" EntitySet="MoneyReceiptDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceDetails_Service" Association="Self.FK_ServiceDetails_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ServiceDetails" EntitySet="ServiceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StuffingDetails_CargoDetails" Association="Self.FK_StuffingDetails_CargoDetails">
+      <End Role="CargoDetails" EntitySet="CargoDetails" />
+      <End Role="StuffingDetails" EntitySet="StuffingDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TrailerNumber_Trailer" Association="Self.FK_TrailerNumber_Trailer">
+      <End Role="Trailer" EntitySet="Trailer" />
+      <End Role="TrailerNumber" EntitySet="TrailerNumber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissionMapping_FormList" Association="Self.FK_UserPermissionMapping_FormList">
+      <End Role="FormList" EntitySet="FormList" />
+      <End Role="UserPermissionMapping" EntitySet="UserPermissionMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissionMapping_UserRole" Association="Self.FK_UserPermissionMapping_UserRole">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="UserPermissionMapping" EntitySet="UserPermissionMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VoucherDetail_VoucherMaster" Association="Self.FK_VoucherDetail_VoucherMaster">
+      <End Role="VoucherMaster" EntitySet="VoucherMaster" />
+      <End Role="VoucherDetail" EntitySet="VoucherDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

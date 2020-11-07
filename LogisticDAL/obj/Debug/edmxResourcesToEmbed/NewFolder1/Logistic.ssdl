@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Logistic.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="ClearAndForwadingAgent">
+    <Key>
+      <PropertyRef Name="ClearAndForwadingAgentId" />
+    </Key>
+    <Property Name="ClearAndForwadingAgentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CFAgentCode" Type="nchar" MaxLength="10" />
+    <Property Name="CFAgentName" Type="nchar" MaxLength="50" />
+    <Property Name="Address" Type="nchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nchar" MaxLength="20" />
+    <Property Name="Fax" Type="nchar" MaxLength="20" />
+    <Property Name="Email" Type="nchar" MaxLength="20" />
+    <Property Name="Mobile" Type="nchar" MaxLength="15" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Commodity">
+    <Key>
+      <PropertyRef Name="CommodityId" />
+    </Key>
+    <Property Name="CommodityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CommodityName" Type="nchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="CompanyInfo">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyCode" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="MD" Type="nvarchar" MaxLength="50" />
+    <Property Name="Chairman" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Logo" Type="image" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Condition">
+    <Key>
+      <PropertyRef Name="ConditionId" />
+    </Key>
+    <Property Name="ConditionId" Type="int" Nullable="false" />
+    <Property Name="ConditionName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Consignee">
+    <Key>
+      <PropertyRef Name="ConsigneeId" />
+    </Key>
+    <Property Name="ConsigneeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsigneeCode" Type="nchar" MaxLength="10" />
+    <Property Name="ConsigneeName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="30" />
+    <Property Name="Web" Type="nvarchar" MaxLength="30" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Container">
+    <Key>
+      <PropertyRef Name="ContainerId" />
+    </Key>
+    <Property Name="ContainerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContainerNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContainerSizeId" Type="int" />
+    <Property Name="ContainerTypeId" Type="int" />
+    <Property Name="ISO Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="nchar" MaxLength="10" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ContainerGrossWeight">
+    <Key>
+      <PropertyRef Name="ContGrossWeightId" />
+    </Key>
+    <Property Name="ContGrossWeightId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GrossWeight" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="ContainerSize">
+    <Key>
+      <PropertyRef Name="ContainerSizeId" />
+    </Key>
+    <Property Name="ContainerSizeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContainerSize" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="ContainerType">
+    <Key>
+      <PropertyRef Name="ContainerTypeId" />
+    </Key>
+    <Property Name="ContainerTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContainerTypeName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CPALocation">
+    <Key>
+      <PropertyRef Name="CPALocationId" />
+    </Key>
+    <Property Name="CPALocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPALocationName" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CSDContGateInOut">
+    <Key>
+      <PropertyRef Name="ContainerGateEntryId" />
+    </Key>
+    <Property Name="ContainerGateEntryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustId" Type="int" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsFromIGMImport" Type="bit" />
+    <Property Name="ContNo" Type="nvarchar" MaxLength="11" />
+    <Property Name="InPermission" Type="bit" />
+    <Property Name="ContType" Type="int" />
+    <Property Name="ContSize" Type="int" />
+    <Property Name="ISO" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExpVssl" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImpVssl" Type="nvarchar" MaxLength="30" />
+    <Property Name="RotExp" Type="nvarchar" MaxLength="15" />
+    <Property Name="RotImp" Type="nvarchar" MaxLength="15" />
+    <Property Name="ChallanNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="ChallanOut" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrailerIn" Type="int" />
+    <Property Name="TrailerOut" Type="int" />
+    <Property Name="TrailerInNo" Type="int" />
+    <Property Name="TrailerOutNo" Type="int" />
+    <Property Name="HaulierIn" Type="int" />
+    <Property Name="HaulierOut" Type="int" />
+    <Property Name="DepotTo" Type="int" />
+    <Property Name="DepotFrom" Type="int" />
+    <Property Name="DumpDate" Type="smalldatetime" />
+    <Property Name="BillTo" Type="nvarchar" MaxLength="10" />
+    <Property Name="UserIdGateOut" Type="int" />
+    <Property Name="UserIdGateIn" Type="int" />
+    <Property Name="DateIn" Type="datetime" />
+    <Property Name="DateOut" Type="datetime" />
+    <Property Name="ContInCondition" Type="int" />
+    <Property Name="ContOutCondition" Type="int" />
+    <Property Name="ContInStatus" Type="int" />
+    <Property Name="RemarkIn" Type="nvarchar" MaxLength="300" />
+    <Property Name="RemarkOut" Type="nvarchar" MaxLength="300" />
+    <Property Name="InOutStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerCode" Type="nchar" MaxLength="10" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="25" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="25" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="25" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Web" Type="nvarchar" MaxLength="100" />
+    <Property Name="RDA" Type="nvarchar" MaxLength="10" />
+    <Property Name="Type" Type="nvarchar" MaxLength="10" />
+    <Property Name="CarrierCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipAgent" Type="nvarchar" MaxLength="50" />
+    <Property Name="isNoBill" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Depot">
+    <Key>
+      <PropertyRef Name="DepotId" />
+    </Key>
+    <Property Name="DepotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepotCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepotName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="EntryDate" Type="nchar" MaxLength="10" />
+    <Property Name="ModifiedDate" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Forwarder">
+    <Key>
+      <PropertyRef Name="ForwarderId" />
+    </Key>
+    <Property Name="ForwarderId" Type="int" Nullable="false" />
+    <Property Name="ForwarderCode" Type="nchar" MaxLength="10" />
+    <Property Name="ForwarderName" Type="nchar" MaxLength="10" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FreightForwarderAgent">
+    <Key>
+      <PropertyRef Name="FreightForwarderId" />
+    </Key>
+    <Property Name="FreightForwarderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FreightForwarderCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="FreightForwarderName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" MaxLength="20" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Haulier">
+    <Key>
+      <PropertyRef Name="HaulierId" />
+    </Key>
+    <Property Name="HaulierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HaulierNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="OwnerName" Type="nchar" MaxLength="30" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IGMContGateInOut">
+    <Key>
+      <PropertyRef Name="IGMContGateInOutId" />
+    </Key>
+    <Property Name="IGMContGateInOutId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IGMDetailsId" Type="bigint" Nullable="false" />
+    <Property Name="CPALockId" Type="int" />
+    <Property Name="HaulierInNo" Type="int" />
+    <Property Name="GateInCondition" Type="int" />
+    <Property Name="GateOutCondition" Type="int" />
+    <Property Name="GateInDate" Type="datetime" />
+    <Property Name="GateOutDate" Type="datetime" />
+    <Property Name="DeliveryType" Type="int" />
+    <Property Name="ClearingForwarderId" Type="int" />
+    <Property Name="FreightForwarderId" Type="int" />
+    <Property Name="RemarksIn" Type="nvarchar" MaxLength="200" />
+    <Property Name="RemarksOut" Type="nvarchar" MaxLength="200" />
+    <Property Name="GateInUserId" Type="int" />
+    <Property Name="GateOutUserId" Type="int" />
+  </EntityType>
+  <EntityType Name="IGMImport">
+    <Key>
+      <PropertyRef Name="IGMImportId" />
+    </Key>
+    <Property Name="IGMImportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferanceNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="BLnumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="ImporterId" Type="int" />
+    <Property Name="ClearandForwId" Type="int" />
+    <Property Name="FrieghtForwId" Type="int" />
+    <Property Name="VesselId" Type="int" />
+    <Property Name="Rotation" Type="nvarchar" MaxLength="20" />
+    <Property Name="NumberofPackage" Type="int" />
+    <Property Name="UnitId" Type="int" />
+    <Property Name="GrossWeight" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PortofDischargeId" Type="int" />
+    <Property Name="PortofDeliveryId" Type="int" />
+    <Property Name="BoxQuantity" Type="int" />
+    <Property Name="Remarks" Type="nchar" MaxLength="500" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IGMImportDetails">
+    <Key>
+      <PropertyRef Name="IGMDetailsId" />
+    </Key>
+    <Property Name="IGMDetailsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IGMImportId" Type="int" />
+    <Property Name="LineNo" Type="nchar" MaxLength="10" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="CommodityId" Type="int" />
+    <Property Name="ContainerNo" Type="nchar" MaxLength="11" />
+    <Property Name="SealNo" Type="nchar" MaxLength="15" />
+    <Property Name="SizeId" Type="int" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="ISO" Type="nchar" MaxLength="15" />
+    <Property Name="InOutStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="Importer">
+    <Key>
+      <PropertyRef Name="ImporterId" />
+    </Key>
+    <Property Name="ImporterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImporterCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ImporterName" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImporterAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="20" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="LocationCode" Type="nchar" MaxLength="10" />
+    <Property Name="LocationName" Type="nchar" MaxLength="10" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Port">
+    <Key>
+      <PropertyRef Name="PortOfLandId" />
+    </Key>
+    <Property Name="PortOfLandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PortCode" Type="nchar" MaxLength="10" />
+    <Property Name="PortName" Type="nchar" MaxLength="50" />
+    <Property Name="PortCountry" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Shipper">
+    <Key>
+      <PropertyRef Name="ShipperId" />
+    </Key>
+    <Property Name="ShipperId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShipperCode" Type="nchar" MaxLength="10" />
+    <Property Name="ShipperName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="25" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="25" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="25" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Web" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Trailer">
+    <Key>
+      <PropertyRef Name="TrailerId" />
+    </Key>
+    <Property Name="TrailerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrailerCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="TrailerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OwnerName" Type="nchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TrailerNoMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TrailerCompany" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TrailerNumber">
+    <Key>
+      <PropertyRef Name="TrailerNumberId" />
+    </Key>
+    <Property Name="TrailerNumberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrailerId" Type="int" Nullable="false" />
+    <Property Name="TrailerNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UnintOfMeasure">
+    <Key>
+      <PropertyRef Name="UnitOfMeasureId" />
+    </Key>
+    <Property Name="UnitOfMeasureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitOfMeasureName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nchar" MaxLength="10" />
+    <Property Name="CompnyId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Vessel">
+    <Key>
+      <PropertyRef Name="VesselId" />
+    </Key>
+    <Property Name="VesselId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VesselCode" Type="nchar" MaxLength="20" />
+    <Property Name="VesselName" Type="nchar" MaxLength="30" />
+    <Property Name="Country" Type="nvarchar" MaxLength="20" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_CompanyInfo_ContainerType">
+    <End Role="ContainerType" Type="Self.ContainerType" Multiplicity="0..1" />
+    <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerType">
+        <PropertyRef Name="ContainerTypeId" />
+      </Principal>
+      <Dependent Role="CompanyInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSDContGateInOut_ContainerSize">
+    <End Role="ContainerSize" Type="Self.ContainerSize" Multiplicity="0..1" />
+    <End Role="CSDContGateInOut" Type="Self.CSDContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerSize">
+        <PropertyRef Name="ContainerSizeId" />
+      </Principal>
+      <Dependent Role="CSDContGateInOut">
+        <PropertyRef Name="ContSize" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSDContGateInOut_ContainerType">
+    <End Role="ContainerType" Type="Self.ContainerType" Multiplicity="0..1" />
+    <End Role="CSDContGateInOut" Type="Self.CSDContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerType">
+        <PropertyRef Name="ContainerTypeId" />
+      </Principal>
+      <Dependent Role="CSDContGateInOut">
+        <PropertyRef Name="ContType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSDContGateInOut_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CSDContGateInOut" Type="Self.CSDContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CSDContGateInOut">
+        <PropertyRef Name="CustId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSDContGateInOut_Haulier">
+    <End Role="Haulier" Type="Self.Haulier" Multiplicity="0..1" />
+    <End Role="CSDContGateInOut" Type="Self.CSDContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Haulier">
+        <PropertyRef Name="HaulierId" />
+      </Principal>
+      <Dependent Role="CSDContGateInOut">
+        <PropertyRef Name="HaulierIn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_CompanyInfo">
+    <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyInfo">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMContGateInOut_IGMImportDetails">
+    <End Role="IGMImportDetails" Type="Self.IGMImportDetails" Multiplicity="1" />
+    <End Role="IGMContGateInOut" Type="Self.IGMContGateInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IGMImportDetails">
+        <PropertyRef Name="IGMDetailsId" />
+      </Principal>
+      <Dependent Role="IGMContGateInOut">
+        <PropertyRef Name="IGMDetailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImport_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="IGMImport" Type="Self.IGMImport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="IGMImport">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImport_Importer">
+    <End Role="Importer" Type="Self.Importer" Multiplicity="0..1" />
+    <End Role="IGMImport" Type="Self.IGMImport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Importer">
+        <PropertyRef Name="ImporterId" />
+      </Principal>
+      <Dependent Role="IGMImport">
+        <PropertyRef Name="ImporterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImport_Vessel">
+    <End Role="Vessel" Type="Self.Vessel" Multiplicity="0..1" />
+    <End Role="IGMImport" Type="Self.IGMImport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vessel">
+        <PropertyRef Name="VesselId" />
+      </Principal>
+      <Dependent Role="IGMImport">
+        <PropertyRef Name="VesselId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImportDetails_ContainerSize">
+    <End Role="ContainerSize" Type="Self.ContainerSize" Multiplicity="0..1" />
+    <End Role="IGMImportDetails" Type="Self.IGMImportDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerSize">
+        <PropertyRef Name="ContainerSizeId" />
+      </Principal>
+      <Dependent Role="IGMImportDetails">
+        <PropertyRef Name="SizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImportDetails_ContainerType">
+    <End Role="ContainerType" Type="Self.ContainerType" Multiplicity="0..1" />
+    <End Role="IGMImportDetails" Type="Self.IGMImportDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContainerType">
+        <PropertyRef Name="ContainerTypeId" />
+      </Principal>
+      <Dependent Role="IGMImportDetails">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IGMImportDetails_IGMImport">
+    <End Role="IGMImport" Type="Self.IGMImport" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IGMImportDetails" Type="Self.IGMImportDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IGMImport">
+        <PropertyRef Name="IGMImportId" />
+      </Principal>
+      <Dependent Role="IGMImportDetails">
+        <PropertyRef Name="IGMImportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Importer_CompanyInfo">
+    <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="0..1" />
+    <End Role="Importer" Type="Self.Importer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyInfo">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Importer">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Importer_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="Importer" Type="Self.Importer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Importer">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_CompanyInfo">
+    <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="0..1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyInfo">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TrailerNoMapping_CompanyInfo">
+    <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="0..1" />
+    <End Role="TrailerNoMapping" Type="Self.TrailerNoMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyInfo">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="TrailerNoMapping">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TrailerNoMapping_CompanyInfo1">
+    <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="0..1" />
+    <End Role="TrailerNoMapping" Type="Self.TrailerNoMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyInfo">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="TrailerNoMapping">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TrailerNoMapping_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="TrailerNoMapping" Type="Self.TrailerNoMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TrailerNoMapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TrailerNumber_Trailer">
+    <End Role="Trailer" Type="Self.Trailer" Multiplicity="1" />
+    <End Role="TrailerNumber" Type="Self.TrailerNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trailer">
+        <PropertyRef Name="TrailerId" />
+      </Principal>
+      <Dependent Role="TrailerNumber">
+        <PropertyRef Name="TrailerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LogisticStoreContainer">
+    <EntitySet Name="ClearAndForwadingAgent" EntityType="Self.ClearAndForwadingAgent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Commodity" EntityType="Self.Commodity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Condition" EntityType="Self.Condition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consignee" EntityType="Self.Consignee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Container" EntityType="Self.Container" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContainerGrossWeight" EntityType="Self.ContainerGrossWeight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContainerSize" EntityType="Self.ContainerSize" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContainerType" EntityType="Self.ContainerType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPALocation" EntityType="Self.CPALocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CSDContGateInOut" EntityType="Self.CSDContGateInOut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Depot" EntityType="Self.Depot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Forwarder" EntityType="Self.Forwarder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FreightForwarderAgent" EntityType="Self.FreightForwarderAgent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Haulier" EntityType="Self.Haulier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IGMContGateInOut" EntityType="Self.IGMContGateInOut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IGMImport" EntityType="Self.IGMImport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IGMImportDetails" EntityType="Self.IGMImportDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Importer" EntityType="Self.Importer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Port" EntityType="Self.Port" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shipper" EntityType="Self.Shipper" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trailer" EntityType="Self.Trailer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrailerNoMapping" EntityType="Self.TrailerNoMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrailerNumber" EntityType="Self.TrailerNumber" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnintOfMeasure" EntityType="Self.UnintOfMeasure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vessel" EntityType="Self.Vessel" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CompanyInfo_ContainerType" Association="Self.FK_CompanyInfo_ContainerType">
+      <End Role="ContainerType" EntitySet="ContainerType" />
+      <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSDContGateInOut_ContainerSize" Association="Self.FK_CSDContGateInOut_ContainerSize">
+      <End Role="ContainerSize" EntitySet="ContainerSize" />
+      <End Role="CSDContGateInOut" EntitySet="CSDContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSDContGateInOut_ContainerType" Association="Self.FK_CSDContGateInOut_ContainerType">
+      <End Role="ContainerType" EntitySet="ContainerType" />
+      <End Role="CSDContGateInOut" EntitySet="CSDContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSDContGateInOut_Customer" Association="Self.FK_CSDContGateInOut_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CSDContGateInOut" EntitySet="CSDContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSDContGateInOut_Haulier" Association="Self.FK_CSDContGateInOut_Haulier">
+      <End Role="Haulier" EntitySet="Haulier" />
+      <End Role="CSDContGateInOut" EntitySet="CSDContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_CompanyInfo" Association="Self.FK_Employee_CompanyInfo">
+      <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMContGateInOut_IGMImportDetails" Association="Self.FK_IGMContGateInOut_IGMImportDetails">
+      <End Role="IGMImportDetails" EntitySet="IGMImportDetails" />
+      <End Role="IGMContGateInOut" EntitySet="IGMContGateInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImport_Customer" Association="Self.FK_IGMImport_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="IGMImport" EntitySet="IGMImport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImport_Importer" Association="Self.FK_IGMImport_Importer">
+      <End Role="Importer" EntitySet="Importer" />
+      <End Role="IGMImport" EntitySet="IGMImport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImport_Vessel" Association="Self.FK_IGMImport_Vessel">
+      <End Role="Vessel" EntitySet="Vessel" />
+      <End Role="IGMImport" EntitySet="IGMImport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImportDetails_ContainerSize" Association="Self.FK_IGMImportDetails_ContainerSize">
+      <End Role="ContainerSize" EntitySet="ContainerSize" />
+      <End Role="IGMImportDetails" EntitySet="IGMImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImportDetails_ContainerType" Association="Self.FK_IGMImportDetails_ContainerType">
+      <End Role="ContainerType" EntitySet="ContainerType" />
+      <End Role="IGMImportDetails" EntitySet="IGMImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IGMImportDetails_IGMImport" Association="Self.FK_IGMImportDetails_IGMImport">
+      <End Role="IGMImport" EntitySet="IGMImport" />
+      <End Role="IGMImportDetails" EntitySet="IGMImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Importer_CompanyInfo" Association="Self.FK_Importer_CompanyInfo">
+      <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+      <End Role="Importer" EntitySet="Importer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Importer_UserInfo" Association="Self.FK_Importer_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Importer" EntitySet="Importer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_CompanyInfo" Association="Self.FK_Location_CompanyInfo">
+      <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_Employee" Association="Self.FK_Location_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TrailerNoMapping_CompanyInfo" Association="Self.FK_TrailerNoMapping_CompanyInfo">
+      <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+      <End Role="TrailerNoMapping" EntitySet="TrailerNoMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TrailerNoMapping_CompanyInfo1" Association="Self.FK_TrailerNoMapping_CompanyInfo1">
+      <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+      <End Role="TrailerNoMapping" EntitySet="TrailerNoMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TrailerNoMapping_UserInfo" Association="Self.FK_TrailerNoMapping_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="TrailerNoMapping" EntitySet="TrailerNoMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TrailerNumber_Trailer" Association="Self.FK_TrailerNumber_Trailer">
+      <End Role="Trailer" EntitySet="Trailer" />
+      <End Role="TrailerNumber" EntitySet="TrailerNumber" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

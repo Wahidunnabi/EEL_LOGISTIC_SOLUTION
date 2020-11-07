@@ -1,0 +1,4 @@
+H:\ELL Logistic\New folder\EEL_LOGISTIC\Service\bin\Service.dll
+H:\ELL Logistic\New folder\EEL_LOGISTIC\Service\bin\Service.pdb
+H:\ELL Logistic\New folder\EEL_LOGISTIC\Service\obj\Release\Service.dll
+H:\ELL Logistic\New folder\EEL_LOGISTIC\Service\obj\Release\Service.pdb

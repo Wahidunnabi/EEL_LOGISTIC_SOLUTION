@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{460BD61D-F652-47F4-A9C8-1733AEEA09B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LOGISTIC</RootNamespace>
+    <AssemblyName>LogisticDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountsVoucherDal.cs" />
+    <Compile Include="AccVoucherType.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agent.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthenticationDAL.cs" />
+    <Compile Include="AccounceDAL.cs" />
+    <Compile Include="Bank.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CargoDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CargoRecieving.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChartOfAccount.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChartOfAccountType.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChartOfService.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChartOfServiceCategory.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClearAndForwadingAgent.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientBillSetup.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Commodity.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyHead_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyInfo.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Condition.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Consignee.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Container.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerGrossWeight.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerSize.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerType.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CPALocation.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDBillDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDBillSummary.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDContGateInOut.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDGateInUPComing.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDMonthlyBillDetailsMLOTopSheet_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDMonthlyBillProcessTrack.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDMonthlyBILLProcess_X16092019_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDMonthlyBILLProcess_x_14092019_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDMonthlyBILLProcess_X_18092019_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_DateRange_FilterReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_DateRange_Inward_MovementReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_DateRange_Inward_Movement_TopReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_DateRange_MovementReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_DateRange_OutWard_MovementReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_DateRange_OutWard_Movement_TopReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_GateInChalan_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_GateOutChalan_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLOWise_BillReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_DailyInwardMovementSummary_old1_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_DailyInwardMovementSummary_old_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_DailyInwardMovementSummary_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_DailyOutwardMovementSummary_old1_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_DailyOutwardMovementSummary_old_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_DailyOutwardMovementSummary_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_DailyStockSummary_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_WiseDaily_InwardReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_WiseDaily_InwardTopReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_WiseDaily_Inward_ConditionReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_WiseDaily_OutwardReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_WiseDaily_OutwardTopReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_Wise_DailyReport_old1_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_Wise_DailyReport_old_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_Wise_DailyReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_MLO_Wise_StockReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_Monthly_AllClient_BILLProcess_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSD_Stock_MovementReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Depot.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportBill.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportBillDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportMLOWiseServiceBillCalculation_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportServiceDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportStuffingDetailsWithService_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportStuffingDetails_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXPORT_ConsigneeWise_DailyReceiving_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXPORT_ConsigneeWise_DailyStatus_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXPORT_ConsigneeWise_DailyStuffing_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Export_DaililyContainerStuffingSummary_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXPORT_EFRWiseBillDetails_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Export_MLO_FFarwarder_SummeryGridSum_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Export_MLO_FFarwarder_SummeryGrid_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Export_StuffingSummaryForBill_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXPORT_TRReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormList.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FreightForwarderAgent.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllCSDBillDetails_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCompanyinfo_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetContainerHistory_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetImportMonthlyReceivingReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMLOWiseContainerStatus_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMLOWiseDailyImportLadenStockSummary__Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Get_Indatewise_ImportContainer_Position_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Get_Indate_and_Size_and_BL_WiseSummery_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Haulier.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IGMContGateInOut.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IGMImport.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IGMImportDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImpDetentionCharg.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImportBill.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImportBillDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImportDeliveryPackageCalculation_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImportDetentionCalculation_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Importer.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Import_ContainetSummary_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Import_MLOWise_DailyReport_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Import_MLOWise_ImportSummary_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Import_MLO_Wise_DailyInOutStock_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISOMapping.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MLOWiseDailyInwardReportCSD_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MoneyReceipt.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MoneyReceiptDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MoneyReceiptService.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatternConfig.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Port.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrintMoneyReceipt_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shipper.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Slab.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_rdlc_AccountsLedger_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_rdlc_AccountsProfitAndLoss_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_rdlc_AccountsVoucher_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StuffingDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDocumentstatu.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trailer.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrailerNumber.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRDAL.cs" />
+    <Compile Include="CargoStuffingDAL.cs" />
+    <Compile Include="CargoReceivingDAL.cs" />
+    <Compile Include="BankDAL.cs" />
+    <Compile Include="CompanyInfoDAL.cs" />
+    <Compile Include="MoneyReceiptDAL.cs" />
+    <Compile Include="ExportReportDAL.cs" />
+    <Compile Include="ImportReportDAL.cs" />
+    <Compile Include="CSDReportDAL.cs" />
+    <Compile Include="CSDGateInOutSearchDAL.cs" />
+    <Compile Include="CsdGateInUpcommingDAL.cs" />
+    <Compile Include="SerachCSDGateInData_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SerachCSDGateInOutData_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SerachIGMGateInOutData_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SerachIGMImportData_Result.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceCategoryDAL.cs" />
+    <Compile Include="LocationDAL.cs" />
+    <Compile Include="ChargeSetupDAL.cs" />
+    <Compile Include="BillingDAL.cs" />
+    <Compile Include="ServiceNameDAL.cs" />
+    <Compile Include="AgentDAL.cs" />
+    <Compile Include="ISOMappingDAL.cs" />
+    <Compile Include="TRReportData.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnintOfMeasure.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDAL.cs" />
+    <Compile Include="FreightForwarderDAL.cs" />
+    <Compile Include="CommodityDAL.cs" />
+    <Compile Include="ShipperDAL.cs" />
+    <Compile Include="ConsigneeDal.cs" />
+    <Compile Include="ContainerSizeDal.cs" />
+    <Compile Include="ContainerTypeDal.cs" />
+    <Compile Include="ClearAndForwaderDal.cs" />
+    <Compile Include="ContainerWightDal.cs" />
+    <Compile Include="CustomerDal.cs" />
+    <Compile Include="DepotDal.cs" />
+    <Compile Include="CSDGateInOutDAL.cs" />
+    <Compile Include="HaulierDAL.cs" />
+    <Compile Include="IGMImportDAL.cs" />
+    <Compile Include="ImporterDal.cs" />
+    <Compile Include="Logistic.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Logistic.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logistic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logistic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Logistic.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PortDAL.cs" />
+    <Compile Include="StatusDAL.cs" />
+    <Compile Include="TrailerDal.cs" />
+    <Compile Include="TrailerNumberDal.cs" />
+    <Compile Include="UnitofMeasureDal.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDefinedModel\AccountsVoucherEntity.cs" />
+    <Compile Include="UserDefinedModel\clsContainerHistory.cs" />
+    <Compile Include="UserInfo.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserPermissionMapping.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VasselDal.cs" />
+    <Compile Include="Vessel.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_csdGateInOut.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoucherDetail.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoucherMaster.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vw_DISTINCTGATEENTRY_STUFFING.cs">
+      <DependentUpon>Logistic.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Logistic.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Logistic.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Logistic.edmx.diagram">
+      <DependentUpon>Logistic.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logistic.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Logistic.edmx</DependentUpon>
+      <LastGenOutput>Logistic.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Logistic.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Logistic.edmx</DependentUpon>
+      <LastGenOutput>Logistic.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

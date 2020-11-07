@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{960BFF98-C702-403C-B943-AA928F777895}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LOGISTIC.BLL</RootNamespace>
+    <AssemblyName>LogisticBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountsVoucherBLL.cs" />
+    <Compile Include="AuthenticationBLL.cs" />
+    <Compile Include="AccounceBLL.cs" />
+    <Compile Include="TRBLL.cs" />
+    <Compile Include="CargoStuffingBLL.cs" />
+    <Compile Include="CargoReceivingBLL.cs" />
+    <Compile Include="BankBLL.cs" />
+    <Compile Include="CompanyInfoBLL.cs" />
+    <Compile Include="MoneyReceiptBLL.cs" />
+    <Compile Include="ExportReportBLL.cs" />
+    <Compile Include="ImportReportBLL.cs" />
+    <Compile Include="CSDReportBLL.cs" />
+    <Compile Include="CSDGateInOutSearchBLL.cs" />
+    <Compile Include="CsdGateInUpcommingBLL.cs" />
+    <Compile Include="ServiceCategoryBLL.cs" />
+    <Compile Include="LocationBLL.cs" />
+    <Compile Include="ChargeSetupBLL.cs" />
+    <Compile Include="BillingBLL.cs" />
+    <Compile Include="ServiceNameBLL.cs" />
+    <Compile Include="AgentBLL.cs" />
+    <Compile Include="ISOMappingBLL.cs" />
+    <Compile Include="UserBLL.cs" />
+    <Compile Include="FreightForwarderBLL.cs" />
+    <Compile Include="ClearAndForwaderBll.cs" />
+    <Compile Include="CommodityBLL.cs" />
+    <Compile Include="ShipperBLL.cs" />
+    <Compile Include="ConsigneeBll.cs" />
+    <Compile Include="ContainerSizeBll.cs" />
+    <Compile Include="ContainerTypeBll.cs" />
+    <Compile Include="ContainerWeightBll.cs" />
+    <Compile Include="CustomerBll.cs" />
+    <Compile Include="DepotBll.cs" />
+    <Compile Include="CSDGateInOutBLL.cs" />
+    <Compile Include="HaulierBLL.cs" />
+    <Compile Include="IGMImportBLL.cs" />
+    <Compile Include="ImporterBll.cs" />
+    <Compile Include="PortBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusBLL.cs" />
+    <Compile Include="TrailerBll.cs" />
+    <Compile Include="TrailerNumberBll.cs" />
+    <Compile Include="UnitofMeasureBll.cs" />
+    <Compile Include="VesselBll.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogisticDAL\LOGISTIC.DAL.csproj">
+      <Project>{460BD61D-F652-47F4-A9C8-1733AEEA09B6}</Project>
+      <Name>LOGISTIC.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LogisticBLL.csproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+E:\EEL_LOGISTIC\WcfServiceLibrary1\bin\Release\WcfServiceLibrary1.dll.config
+E:\EEL_LOGISTIC\WcfServiceLibrary1\bin\Release\WcfServiceLibrary1.dll
+E:\EEL_LOGISTIC\WcfServiceLibrary1\bin\Release\WcfServiceLibrary1.pdb
+E:\EEL_LOGISTIC\WcfServiceLibrary1\obj\Release\WcfServiceLibrary1.dll
+E:\EEL_LOGISTIC\WcfServiceLibrary1\obj\Release\WcfServiceLibrary1.pdb

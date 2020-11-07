@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b2f7d86df4f64f85bbc95ef95040b4a4" Name="Diagram1" ZoomLevel="74">
+        <AssociationConnector Association="Logistic.FK_Location_CompanyInfo" />
+        <AssociationConnector Association="Logistic.FK_Location_Employee" />
+        <EntityTypeShape EntityType="Logistic.AccVoucherType" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Logistic.ChartOfAccount" Width="1.5" PointX="15.75" PointY="20.75" />
+        <EntityTypeShape EntityType="Logistic.ChartOfAccountType" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Logistic.VoucherDetail" Width="1.5" PointX="21" PointY="19.5" />
+        <EntityTypeShape EntityType="Logistic.VoucherMaster" Width="1.5" PointX="18.75" PointY="19" />
+        <EntityTypeShape EntityType="Logistic.Agent" Width="1.5" PointX="4.5" PointY="2.375" />
+        <EntityTypeShape EntityType="Logistic.Bank" Width="1.5" PointX="20.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Logistic.CargoDetail" Width="1.5" PointX="14" PointY="5.375" />
+        <EntityTypeShape EntityType="Logistic.CargoRecieving" Width="1.5" PointX="11.75" PointY="6" />
+        <EntityTypeShape EntityType="Logistic.ChartOfService" Width="1.5" PointX="0.75" PointY="7.25" />
+        <EntityTypeShape EntityType="Logistic.ChartOfServiceCategory" Width="1.5" PointX="1.5" PointY="4.125" />
+        <EntityTypeShape EntityType="Logistic.ClearAndForwadingAgent" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="Logistic.ClientBillSetup" Width="1.5" PointX="3" PointY="7.25" />
+        <EntityTypeShape EntityType="Logistic.Commodity" Width="1.5" PointX="2.75" PointY="21.75" />
+        <EntityTypeShape EntityType="Logistic.CompanyInfo" Width="1.5" PointX="10.75" PointY="19" />
+        <EntityTypeShape EntityType="Logistic.Condition" Width="1.5" PointX="4.75" PointY="21.75" />
+        <EntityTypeShape EntityType="Logistic.Consignee" Width="1.5" PointX="21.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Logistic.Container" Width="1.5" PointX="10.75" PointY="22.75" />
+        <EntityTypeShape EntityType="Logistic.ContainerGrossWeight" Width="1.5" PointX="22.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Logistic.ContainerSize" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Logistic.ContainerType" Width="1.5" PointX="6.75" PointY="8.375" />
+        <EntityTypeShape EntityType="Logistic.CPALocation" Width="1.5" PointX="12.75" PointY="22.75" />
+        <EntityTypeShape EntityType="Logistic.CSDBillDetail" Width="1.5" PointX="20.75" PointY="22.75" />
+        <EntityTypeShape EntityType="Logistic.CSDBillSummary" Width="1.5" PointX="22.75" PointY="22.75" />
+        <EntityTypeShape EntityType="Logistic.CSDContGateInOut" Width="1.5" PointX="9" PointY="8.25" />
+        <EntityTypeShape EntityType="Logistic.CSDGateInUPComing" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Logistic.CSDMonthlyBillProcessTrack" Width="1.5" PointX="23.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Logistic.Customer" Width="1.5" PointX="6.75" PointY="1.125" />
+        <EntityTypeShape EntityType="Logistic.Depot" Width="1.5" PointX="23.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Logistic.Employee" Width="1.5" PointX="13" PointY="19.125" />
+        <EntityTypeShape EntityType="Logistic.ExportBill" Width="1.5" PointX="18.75" PointY="8" />
+        <EntityTypeShape EntityType="Logistic.ExportBillDetail" Width="1.5" PointX="21" PointY="8.75" />
+        <EntityTypeShape EntityType="Logistic.ExportServiceDetail" Width="1.5" PointX="23.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Logistic.FormList" Width="1.5" PointX="8.75" PointY="1.5" />
+        <EntityTypeShape EntityType="Logistic.FreightForwarderAgent" Width="1.5" PointX="17.75" PointY="23.75" />
+        <EntityTypeShape EntityType="Logistic.Haulier" Width="1.5" PointX="6.75" PointY="16" />
+        <EntityTypeShape EntityType="Logistic.IGMContGateInOut" Width="1.5" PointX="8.25" PointY="18.5" />
+        <EntityTypeShape EntityType="Logistic.IGMImport" Width="1.5" PointX="3.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Logistic.IGMImportDetail" Width="1.5" PointX="6" PointY="11.125" />
+        <EntityTypeShape EntityType="Logistic.ImpDetentionCharg" Width="1.5" PointX="23.75" PointY="18.75" />
+        <EntityTypeShape EntityType="Logistic.ImportBill" Width="1.5" PointX="18.75" PointY="1.125" />
+        <EntityTypeShape EntityType="Logistic.ImportBillDetail" Width="1.5" PointX="21" PointY="2.125" />
+        <EntityTypeShape EntityType="Logistic.Importer" Width="1.5" PointX="2.75" PointY="24.75" />
+        <EntityTypeShape EntityType="Logistic.ISOMapping" Width="1.5" PointX="3" PointY="11.75" />
+        <EntityTypeShape EntityType="Logistic.Location" Width="1.5" PointX="4.75" PointY="24.75" />
+        <EntityTypeShape EntityType="Logistic.MoneyReceipt" Width="1.5" PointX="16.75" PointY="14.125" />
+        <EntityTypeShape EntityType="Logistic.MoneyReceiptDetail" Width="1.5" PointX="19" PointY="15.375" />
+        <EntityTypeShape EntityType="Logistic.MoneyReceiptService" Width="1.5" PointX="24.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Logistic.PatternConfig" Width="1.5" PointX="14.75" PointY="24.75" />
+        <EntityTypeShape EntityType="Logistic.Port" Width="1.5" PointX="24.75" PointY="22.75" />
+        <EntityTypeShape EntityType="Logistic.Service" Width="1.5" PointX="11.75" PointY="14.125" />
+        <EntityTypeShape EntityType="Logistic.ServiceDetail" Width="1.5" PointX="14" PointY="13.875" />
+        <EntityTypeShape EntityType="Logistic.Shipper" Width="1.5" PointX="25.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Logistic.Slab" Width="1.5" PointX="25.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Logistic.Status" Width="1.5" PointX="25.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Logistic.StuffingDetail" Width="1.5" PointX="16.25" PointY="5.125" />
+        <EntityTypeShape EntityType="Logistic.sysdiagram" Width="1.5" PointX="25.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Logistic.tblDocumentstatu" Width="1.5" PointX="25.75" PointY="17.75" />
+        <EntityTypeShape EntityType="Logistic.Trailer" Width="1.5" PointX="13.75" PointY="1" />
+        <EntityTypeShape EntityType="Logistic.TrailerNumber" Width="1.5" PointX="16" PointY="1" />
+        <EntityTypeShape EntityType="Logistic.TRReportData" Width="1.5" PointX="24.75" PointY="25.75" />
+        <EntityTypeShape EntityType="Logistic.UnintOfMeasure" Width="1.5" PointX="1.5" PointY="15.625" />
+        <EntityTypeShape EntityType="Logistic.UserInfo" Width="1.5" PointX="10.75" PointY="26.75" />
+        <EntityTypeShape EntityType="Logistic.UserPermissionMapping" Width="1.5" PointX="11" PointY="1" />
+        <EntityTypeShape EntityType="Logistic.UserRole" Width="1.5" PointX="8.75" PointY="24.5" />
+        <EntityTypeShape EntityType="Logistic.Vessel" Width="1.5" PointX="1.5" PointY="18" />
+        <EntityTypeShape EntityType="Logistic.view_csdGateInOut" Width="1.5" PointX="26.75" PointY="20.75" />
+        <EntityTypeShape EntityType="Logistic.Vw_DISTINCTGATEENTRY_STUFFING" Width="1.5" PointX="26.75" PointY="10.75" />
+        <AssociationConnector Association="Logistic.FK_VoucherDetail_VoucherMaster" />
+        <AssociationConnector Association="Logistic.FK_Customer_Agent" />
+        <AssociationConnector Association="Logistic.FK_CargoDetails_CargoRecieving" />
+        <AssociationConnector Association="Logistic.FK_StuffingDetails_CargoDetails" />
+        <AssociationConnector Association="Logistic.FK_ChartOfService_ChartOfServiceCategory" />
+        <AssociationConnector Association="Logistic.FK_ClientBillSetup_ChartOfService" />
+        <AssociationConnector Association="Logistic.FK_ClientBillSetup_ContainerSize" />
+        <AssociationConnector Association="Logistic.FK_Employee_CompanyInfo" />
+        <AssociationConnector Association="Logistic.FK_CSDContGateInOut_ContainerSize" />
+        <AssociationConnector Association="Logistic.FK_IGMImportDetails_ContainerSize" />
+        <AssociationConnector Association="Logistic.FK_ISOMapping_ContainerSize" />
+        <AssociationConnector Association="Logistic.FK_CSDContGateInOut_ContainerType" />
+        <AssociationConnector Association="Logistic.FK_IGMImportDetails_ContainerType" />
+        <AssociationConnector Association="Logistic.FK_ISOMapping_ContainerType" />
+        <AssociationConnector Association="Logistic.FK_CSDContGateInOut_Customer" />
+        <AssociationConnector Association="Logistic.FK_CSDContGateInOut_Haulier" />
+        <AssociationConnector Association="Logistic.FK_IGMImport_Customer" />
+        <AssociationConnector Association="Logistic.FK_ExportBillDetails_ExportBill" />
+        <AssociationConnector Association="Logistic.FK_UserPermissionMapping_FormList" />
+        <AssociationConnector Association="Logistic.FK_IGMContGateInOut_IGMImportDetails" />
+        <AssociationConnector Association="Logistic.FK_IGMImport_UnintOfMeasure" />
+        <AssociationConnector Association="Logistic.FK_IGMImport_Vessel" />
+        <AssociationConnector Association="Logistic.FK_IGMImportDetails_IGMImport" />
+        <AssociationConnector Association="Logistic.FK_ImportBillDetails_ImportBill" />
+        <AssociationConnector Association="Logistic.FK_MoneyReceiptDetails_MoneyReceipt" />
+        <AssociationConnector Association="Logistic.FK_ServiceDetails_Service" />
+        <AssociationConnector Association="Logistic.FK_TrailerNumber_Trailer" />
+        <AssociationConnector Association="Logistic.FK_UserPermissionMapping_UserRole" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

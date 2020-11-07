@@ -1,0 +1,14 @@
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.pdb
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.Data.v6.3.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.Utils.v6.3.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.XtraBars.v6.3.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.XtraEditors.v6.3.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Properties.Resources.resources
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.csproj.GenerateResource.Cache
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.exe.licenses
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.exe
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.pdb
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Main.resources
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Docable.resources
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.csprojResolveAssemblyReference.cache

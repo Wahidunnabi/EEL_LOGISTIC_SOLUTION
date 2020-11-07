@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PORT_LOGISTICModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="PORT_LOGISTICEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CompanyInfoes" EntityType="PORT_LOGISTICModel.CompanyInfo" />
+    <EntitySet Name="ContainerGateEntries" EntityType="PORT_LOGISTICModel.ContainerGateEntry" />
+    <EntitySet Name="ContainerGateOuts" EntityType="PORT_LOGISTICModel.ContainerGateOut" />
+    <EntitySet Name="ContainerGrossWeights" EntityType="PORT_LOGISTICModel.ContainerGrossWeight" />
+    <EntitySet Name="ContainerSizes" EntityType="PORT_LOGISTICModel.ContainerSize" />
+    <EntitySet Name="Depots" EntityType="PORT_LOGISTICModel.Depot" />
+    <EntitySet Name="Employees" EntityType="PORT_LOGISTICModel.Employee" />
+    <EntitySet Name="Hauliers" EntityType="PORT_LOGISTICModel.Haulier" />
+    <EntitySet Name="Trailers" EntityType="PORT_LOGISTICModel.Trailer" />
+    <EntitySet Name="TrailerNoLists" EntityType="PORT_LOGISTICModel.TrailerNoList" />
+    <EntitySet Name="TrailerNoMappings" EntityType="PORT_LOGISTICModel.TrailerNoMapping" />
+  </EntityContainer>
+  <EntityType Name="CompanyInfo">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Type="String" Name="CompanyId" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="CompanyCode" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Telephone" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MD" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Chairman" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Logo" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ContainerGateEntry">
+    <Key>
+      <PropertyRef Name="CustId" />
+      <PropertyRef Name="RefNo" />
+    </Key>
+    <Property Type="Int32" Name="ContainerGateEntryId" />
+    <Property Type="Int32" Name="ContainerGateEntryCode" />
+    <Property Type="String" Name="CustId" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RefNo" Nullable="false" />
+    <Property Type="String" Name="ContNo" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Tp" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sz" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cont_iso_code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="cgw" />
+    <Property Type="DateTime" Name="DateIn" />
+    <Property Type="String" Name="ImpVsl" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ImpRot" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Challan" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Trailer" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrailerNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Haulier" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="AvStat" />
+    <Property Type="String" Name="brtFrom" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="brtLoc" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Stack" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="AvNow" />
+    <Property Type="DateTime" Name="AvNowDt" />
+    <Property Type="String" Name="Depot" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DepotIn" />
+    <Property Type="DateTime" Name="DepotOut" />
+    <Property Type="String" Name="UserId" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RemarkID" />
+    <Property Type="String" Name="EmptySurveyBy" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="EmptySurveyTime" />
+    <Property Type="DateTime" Name="DateInImp" />
+    <Property Type="DateTime" Name="DumpDate" />
+    <Property Type="String" Name="DumpRemark" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DumpEntryBy" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DumpEntryTime" />
+    <Property Type="Int32" Name="isCancel" />
+    <Property Type="String" Name="CancelEntryBy" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CancelEntryTime" />
+    <Property Type="DateTime" Name="DIdate" />
+    <Property Type="String" Name="BillTo" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="cPassDt" />
+  </EntityType>
+  <EntityType Name="ContainerGateOut">
+    <Key>
+      <PropertyRef Name="ContainerGateOutCode" />
+      <PropertyRef Name="CustomerId" />
+      <PropertyRef Name="RefNo" />
+    </Key>
+    <Property Type="Int32" Name="ContainerGateOutID" />
+    <Property Type="String" Name="ContainerGateOutCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CustomerId" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RefNo" Nullable="false" />
+    <Property Type="DateTime" Name="DateOut" />
+    <Property Type="String" Name="VesselOut" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RotationOut" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ChallanOut" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrailerOut" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrailerNoOut" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HaulierOut" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="AvStatOut" />
+    <Property Type="String" Name="DmgDescOut" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="brtToOut" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RemarkOut" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserIdOut" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="OutTimeOut" />
+    <Property Type="DateTime" Name="PortTimeOut" />
+    <Property Type="DateTime" Name="cPassDtOut" />
+    <Property Type="String" Name="contnoOut" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContainerGrossWeight">
+    <Key>
+      <PropertyRef Name="ContainergrossweightId" />
+    </Key>
+    <Property Type="Int32" Name="ContainergrossweightId" Nullable="false" />
+    <Property Type="String" Name="ContainergrossweightCode" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="Containergrossweight1" />
+  </EntityType>
+  <EntityType Name="ContainerSize">
+    <Key>
+      <PropertyRef Name="ContainerSizeId" />
+    </Key>
+    <Property Type="Int32" Name="ContainerSizeId" Nullable="false" />
+    <Property Type="String" Name="ContainerSizeCode" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="ContainerSize1" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Depot">
+    <Key>
+      <PropertyRef Name="DepotId" />
+    </Key>
+    <Property Type="Int32" Name="DepotId" Nullable="false" />
+    <Property Type="String" Name="DepotCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DepotName" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Haulier">
+    <Key>
+      <PropertyRef Name="HaulierId" />
+    </Key>
+    <Property Type="Int32" Name="HaulierId" Nullable="false" />
+    <Property Type="String" Name="HaulierCode" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="HaulierName" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Trailer">
+    <Key>
+      <PropertyRef Name="TrailerId" />
+    </Key>
+    <Property Type="Int32" Name="TrailerId" Nullable="false" />
+    <Property Type="String" Name="TrailerCode" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="TrailerName" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TrailerNoList">
+    <Key>
+      <PropertyRef Name="TrailerId" />
+    </Key>
+    <Property Type="Int32" Name="TrailerId" Nullable="false" />
+    <Property Type="Int32" Name="TrailerCompanyId" Nullable="false" />
+    <Property Type="String" Name="TrailerNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="EntryDate" />
+    <Property Type="Int32" Name="CreatorID" />
+    <Property Type="DateTime" Name="CreateDate" />
+    <Property Type="Int32" Name="UpdateID" />
+    <Property Type="DateTime" Name="UpdateDate" />
+  </EntityType>
+  <EntityType Name="TrailerNoMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="TrailerCompany" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Entrydate" />
+  </EntityType>
+</Schema>

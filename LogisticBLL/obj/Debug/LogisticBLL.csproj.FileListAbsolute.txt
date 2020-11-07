@@ -1,0 +1,7 @@
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\LogisticBLL\bin\Debug\LogisticBLL.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\LogisticBLL\bin\Debug\LogisticBLL.pdb
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\LogisticBLL\obj\Debug\LogisticBLL.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\LogisticBLL\obj\Debug\LogisticBLL.pdb
+C:\Users\pathfider\Documents\Visual Studio 2010\Projects\WindowsFormsApplication4\LogisticBLL\bin\Debug\LogisticDAL.dll
+C:\Users\pathfider\Documents\Visual Studio 2010\Projects\WindowsFormsApplication4\LogisticBLL\bin\Debug\LogisticDAL.pdb
+C:\Users\pathfider\Documents\Visual Studio 2010\Projects\WindowsFormsApplication4\LogisticBLL\obj\Debug\LogisticBLL.csprojResolveAssemblyReference.cache

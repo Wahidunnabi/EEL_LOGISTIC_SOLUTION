@@ -1,0 +1,35 @@
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.pdb
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.Data.v6.3.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.Utils.v6.3.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.XtraBars.v6.3.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.XtraEditors.v6.3.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Docable.resources
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Main.resources
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Properties.Resources.resources
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\LogisticUI.csproj.GenerateResource.Cache
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.exe.licenses
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.exe
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.pdb
+C:\Users\pathfider\Documents\Visual Studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\LogisticUI.csprojResolveAssemblyReference.cache
+C:\Users\pathfider\Documents\Visual Studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Trailer.resources
+C:\Users\pathfider\Documents\Visual Studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\LogisticBLL.dll
+C:\Users\pathfider\Documents\Visual Studio 2010\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\LogisticBLL.pdb
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.exe
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.pdb
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\LogisticUI.csprojResolveAssemblyReference.cache
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Docable.resources
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Main.resources
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Properties.Resources.resources
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.Trailer.resources
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\LogisticUI.csproj.GenerateResource.Cache
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.exe.licenses
+E:\EEL_LOGISTIC\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe
+E:\EEL_LOGISTIC\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.pdb
+E:\EEL_LOGISTIC\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.Data.v6.3.dll
+E:\EEL_LOGISTIC\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.Utils.v6.3.dll
+E:\EEL_LOGISTIC\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.XtraBars.v6.3.dll
+E:\EEL_LOGISTIC\WindowsFormsApplication4\bin\Debug\DevExpress.DXCore.Controls.XtraEditors.v6.3.dll
+E:\EEL_LOGISTIC\WindowsFormsApplication4\bin\Debug\LogisticBLL.dll
+E:\EEL_LOGISTIC\WindowsFormsApplication4\bin\Debug\LogisticBLL.pdb
+E:\EEL_LOGISTIC\WindowsFormsApplication4\obj\x86\Debug\WindowsFormsApplication4.ContainerSize.resources

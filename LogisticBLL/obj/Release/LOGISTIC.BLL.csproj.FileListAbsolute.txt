@@ -1,0 +1,9 @@
+E:\EEL_LOGISTIC\LogisticBLL\bin\Release\LogisticBLL.dll
+E:\EEL_LOGISTIC\LogisticBLL\bin\Release\LogisticBLL.pdb
+E:\EEL_LOGISTIC\LogisticBLL\bin\Release\LogisticDAL.dll
+E:\EEL_LOGISTIC\LogisticBLL\bin\Release\EntityFramework.dll
+E:\EEL_LOGISTIC\LogisticBLL\bin\Release\LogisticDAL.pdb
+E:\EEL_LOGISTIC\LogisticBLL\bin\Release\EntityFramework.xml
+E:\EEL_LOGISTIC\LogisticBLL\obj\Release\LOGISTIC.BLL.csprojResolveAssemblyReference.cache
+E:\EEL_LOGISTIC\LogisticBLL\obj\Release\LogisticBLL.dll
+E:\EEL_LOGISTIC\LogisticBLL\obj\Release\LogisticBLL.pdb

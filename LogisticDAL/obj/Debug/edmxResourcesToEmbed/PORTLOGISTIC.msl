@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PortLogisticModelStoreContainer" CdmEntityContainer="PortLogisticEntities">
+    <EntitySetMapping Name="TrailerNoLists">
+      <EntityTypeMapping TypeName="PortLogisticModel.TrailerNoList">
+        <MappingFragment StoreEntitySet="TrailerNoList">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateID" ColumnName="UpdateID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatorID" ColumnName="CreatorID" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="TrailerNumber" ColumnName="TrailerNumber" />
+          <ScalarProperty Name="TrailerCompanyId" ColumnName="TrailerCompanyId" />
+          <ScalarProperty Name="TrailerId" ColumnName="TrailerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

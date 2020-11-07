@@ -1,0 +1,5 @@
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\LogisticDAL\bin\Debug\LogisticDAL.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\LogisticDAL\bin\Debug\LogisticDAL.pdb
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\LogisticDAL\obj\Debug\LogisticDAL.dll
+C:\Users\pathfider\documents\visual studio 2010\Projects\WindowsFormsApplication4\LogisticDAL\obj\Debug\LogisticDAL.pdb
+C:\Users\pathfider\Documents\Visual Studio 2010\Projects\WindowsFormsApplication4\LogisticDAL\bin\Debug\LogisticDAL.dll.config

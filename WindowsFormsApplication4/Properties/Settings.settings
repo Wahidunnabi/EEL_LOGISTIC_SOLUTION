@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LOGISTIC.UI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DATABASE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PORT_LOGISTIC</Value>
+    </Setting>
+    <Setting Name="USERID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="PASSWORD" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Sa@1234</Value>
+    </Setting>
+    <Setting Name="DBSERVER" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ELL-SERVER2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

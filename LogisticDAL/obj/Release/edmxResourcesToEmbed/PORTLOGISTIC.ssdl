@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PORT_LOGISTICModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PORT_LOGISTICModelStoreContainer">
+    <EntitySet Name="CompanyInfo" EntityType="PORT_LOGISTICModel.Store.CompanyInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContainerGateEntry" EntityType="PORT_LOGISTICModel.Store.ContainerGateEntry" store:Type="Tables" store:Schema="dbo" store:Name="ContainerGateEntry">
+      <DefiningQuery>SELECT 
+      [ContainerGateEntry].[ContainerGateEntryId] AS [ContainerGateEntryId], 
+      [ContainerGateEntry].[ContainerGateEntryCode] AS [ContainerGateEntryCode], 
+      [ContainerGateEntry].[CustId] AS [CustId], 
+      [ContainerGateEntry].[RefNo] AS [RefNo], 
+      [ContainerGateEntry].[ContNo] AS [ContNo], 
+      [ContainerGateEntry].[Tp] AS [Tp], 
+      [ContainerGateEntry].[Sz] AS [Sz], 
+      [ContainerGateEntry].[cont_iso_code] AS [cont_iso_code], 
+      [ContainerGateEntry].[cgw] AS [cgw], 
+      [ContainerGateEntry].[DateIn] AS [DateIn], 
+      [ContainerGateEntry].[ImpVsl] AS [ImpVsl], 
+      [ContainerGateEntry].[ImpRot] AS [ImpRot], 
+      [ContainerGateEntry].[Challan] AS [Challan], 
+      [ContainerGateEntry].[Trailer] AS [Trailer], 
+      [ContainerGateEntry].[TrailerNo] AS [TrailerNo], 
+      [ContainerGateEntry].[Haulier] AS [Haulier], 
+      [ContainerGateEntry].[AvStat] AS [AvStat], 
+      [ContainerGateEntry].[brtFrom] AS [brtFrom], 
+      [ContainerGateEntry].[brtLoc] AS [brtLoc], 
+      [ContainerGateEntry].[Stack] AS [Stack], 
+      [ContainerGateEntry].[Remark] AS [Remark], 
+      [ContainerGateEntry].[AvNow] AS [AvNow], 
+      [ContainerGateEntry].[AvNowDt] AS [AvNowDt], 
+      [ContainerGateEntry].[Depot] AS [Depot], 
+      [ContainerGateEntry].[DepotIn] AS [DepotIn], 
+      [ContainerGateEntry].[DepotOut] AS [DepotOut], 
+      [ContainerGateEntry].[UserId] AS [UserId], 
+      [ContainerGateEntry].[RemarkID] AS [RemarkID], 
+      [ContainerGateEntry].[EmptySurveyBy] AS [EmptySurveyBy], 
+      [ContainerGateEntry].[EmptySurveyTime] AS [EmptySurveyTime], 
+      [ContainerGateEntry].[DateInImp] AS [DateInImp], 
+      [ContainerGateEntry].[DumpDate] AS [DumpDate], 
+      [ContainerGateEntry].[DumpRemark] AS [DumpRemark], 
+      [ContainerGateEntry].[DumpEntryBy] AS [DumpEntryBy], 
+      [ContainerGateEntry].[DumpEntryTime] AS [DumpEntryTime], 
+      [ContainerGateEntry].[isCancel] AS [isCancel], 
+      [ContainerGateEntry].[CancelEntryBy] AS [CancelEntryBy], 
+      [ContainerGateEntry].[CancelEntryTime] AS [CancelEntryTime], 
+      [ContainerGateEntry].[DIdate] AS [DIdate], 
+      [ContainerGateEntry].[BillTo] AS [BillTo], 
+      [ContainerGateEntry].[cPassDt] AS [cPassDt]
+      FROM [dbo].[ContainerGateEntry] AS [ContainerGateEntry]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ContainerGateOut" EntityType="PORT_LOGISTICModel.Store.ContainerGateOut" store:Type="Tables" store:Schema="dbo" store:Name="ContainerGateOut">
+      <DefiningQuery>SELECT 
+      [ContainerGateOut].[ContainerGateOutID] AS [ContainerGateOutID], 
+      [ContainerGateOut].[ContainerGateOutCode] AS [ContainerGateOutCode], 
+      [ContainerGateOut].[CustomerId] AS [CustomerId], 
+      [ContainerGateOut].[RefNo] AS [RefNo], 
+      [ContainerGateOut].[DateOut] AS [DateOut], 
+      [ContainerGateOut].[VesselOut] AS [VesselOut], 
+      [ContainerGateOut].[RotationOut] AS [RotationOut], 
+      [ContainerGateOut].[ChallanOut] AS [ChallanOut], 
+      [ContainerGateOut].[TrailerOut] AS [TrailerOut], 
+      [ContainerGateOut].[TrailerNoOut] AS [TrailerNoOut], 
+      [ContainerGateOut].[HaulierOut] AS [HaulierOut], 
+      [ContainerGateOut].[AvStatOut] AS [AvStatOut], 
+      [ContainerGateOut].[DmgDescOut] AS [DmgDescOut], 
+      [ContainerGateOut].[brtToOut] AS [brtToOut], 
+      [ContainerGateOut].[RemarkOut] AS [RemarkOut], 
+      [ContainerGateOut].[UserIdOut] AS [UserIdOut], 
+      [ContainerGateOut].[OutTimeOut] AS [OutTimeOut], 
+      [ContainerGateOut].[PortTimeOut] AS [PortTimeOut], 
+      [ContainerGateOut].[cPassDtOut] AS [cPassDtOut], 
+      [ContainerGateOut].[contnoOut] AS [contnoOut]
+      FROM [dbo].[ContainerGateOut] AS [ContainerGateOut]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ContainerGrossWeight" EntityType="PORT_LOGISTICModel.Store.ContainerGrossWeight" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContainerSize" EntityType="PORT_LOGISTICModel.Store.ContainerSize" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Depot" EntityType="PORT_LOGISTICModel.Store.Depot" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="PORT_LOGISTICModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Haulier" EntityType="PORT_LOGISTICModel.Store.Haulier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trailer" EntityType="PORT_LOGISTICModel.Store.Trailer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TrailerNoList" EntityType="PORT_LOGISTICModel.Store.TrailerNoList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TrailerNoMapping" EntityType="PORT_LOGISTICModel.Store.TrailerNoMapping" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="CompanyInfo">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="CompanyCode" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="MD" Type="nvarchar" MaxLength="50" />
+    <Property Name="Chairman" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Logo" Type="image" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'PORT_LOGISTIC.dbo.ContainerGateEntry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ContainerGateEntry">
+    <Key>
+      <PropertyRef Name="CustId" />
+      <PropertyRef Name="RefNo" />
+    </Key>
+    <Property Name="ContainerGateEntryId" Type="int" />
+    <Property Name="ContainerGateEntryCode" Type="int" />
+    <Property Name="CustId" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="RefNo" Type="int" Nullable="false" />
+    <Property Name="ContNo" Type="nvarchar" MaxLength="11" />
+    <Property Name="Tp" Type="nvarchar" MaxLength="2" />
+    <Property Name="Sz" Type="nvarchar" MaxLength="2" />
+    <Property Name="cont_iso_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="cgw" Type="int" />
+    <Property Name="DateIn" Type="smalldatetime" />
+    <Property Name="ImpVsl" Type="nvarchar" MaxLength="20" />
+    <Property Name="ImpRot" Type="nvarchar" MaxLength="9" />
+    <Property Name="Challan" Type="nvarchar" MaxLength="10" />
+    <Property Name="Trailer" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrailerNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Haulier" Type="nvarchar" MaxLength="15" />
+    <Property Name="AvStat" Type="bit" />
+    <Property Name="brtFrom" Type="nvarchar" MaxLength="50" />
+    <Property Name="brtLoc" Type="nvarchar" MaxLength="3" />
+    <Property Name="Stack" Type="nvarchar" MaxLength="8" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="400" />
+    <Property Name="AvNow" Type="bit" />
+    <Property Name="AvNowDt" Type="smalldatetime" />
+    <Property Name="Depot" Type="nvarchar" MaxLength="4" />
+    <Property Name="DepotIn" Type="datetime" />
+    <Property Name="DepotOut" Type="datetime" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="8" />
+    <Property Name="RemarkID" Type="int" />
+    <Property Name="EmptySurveyBy" Type="nvarchar" MaxLength="10" />
+    <Property Name="EmptySurveyTime" Type="datetime" />
+    <Property Name="DateInImp" Type="smalldatetime" />
+    <Property Name="DumpDate" Type="smalldatetime" />
+    <Property Name="DumpRemark" Type="nvarchar" MaxLength="400" />
+    <Property Name="DumpEntryBy" Type="nvarchar" MaxLength="10" />
+    <Property Name="DumpEntryTime" Type="datetime" />
+    <Property Name="isCancel" Type="int" />
+    <Property Name="CancelEntryBy" Type="nvarchar" MaxLength="10" />
+    <Property Name="CancelEntryTime" Type="datetime" />
+    <Property Name="DIdate" Type="datetime" />
+    <Property Name="BillTo" Type="nvarchar" MaxLength="3" />
+    <Property Name="cPassDt" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'PORT_LOGISTIC.dbo.ContainerGateOut' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ContainerGateOut">
+    <Key>
+      <PropertyRef Name="ContainerGateOutCode" />
+      <PropertyRef Name="CustomerId" />
+      <PropertyRef Name="RefNo" />
+    </Key>
+    <Property Name="ContainerGateOutID" Type="int" />
+    <Property Name="ContainerGateOutCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="CustomerId" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="RefNo" Type="int" Nullable="false" />
+    <Property Name="DateOut" Type="smalldatetime" />
+    <Property Name="VesselOut" Type="nvarchar" MaxLength="15" />
+    <Property Name="RotationOut" Type="nvarchar" MaxLength="9" />
+    <Property Name="ChallanOut" Type="nvarchar" MaxLength="10" />
+    <Property Name="TrailerOut" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrailerNoOut" Type="nvarchar" MaxLength="50" />
+    <Property Name="HaulierOut" Type="nvarchar" MaxLength="15" />
+    <Property Name="AvStatOut" Type="bit" />
+    <Property Name="DmgDescOut" Type="nvarchar" MaxLength="25" />
+    <Property Name="brtToOut" Type="nvarchar" MaxLength="50" />
+    <Property Name="RemarkOut" Type="nvarchar" MaxLength="255" />
+    <Property Name="UserIdOut" Type="nvarchar" MaxLength="8" />
+    <Property Name="OutTimeOut" Type="datetime" />
+    <Property Name="PortTimeOut" Type="datetime" />
+    <Property Name="cPassDtOut" Type="smalldatetime" />
+    <Property Name="contnoOut" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ContainerGrossWeight">
+    <Key>
+      <PropertyRef Name="ContainergrossweightId" />
+    </Key>
+    <Property Name="ContainergrossweightId" Type="int" Nullable="false" />
+    <Property Name="ContainergrossweightCode" Type="nchar" MaxLength="10" />
+    <Property Name="Containergrossweight" Type="int" />
+  </EntityType>
+  <EntityType Name="ContainerSize">
+    <Key>
+      <PropertyRef Name="ContainerSizeId" />
+    </Key>
+    <Property Name="ContainerSizeId" Type="int" Nullable="false" />
+    <Property Name="ContainerSizeCode" Type="nchar" MaxLength="10" />
+    <Property Name="ContainerSize" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="Depot">
+    <Key>
+      <PropertyRef Name="DepotId" />
+    </Key>
+    <Property Name="DepotId" Type="int" Nullable="false" />
+    <Property Name="DepotCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepotName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Haulier">
+    <Key>
+      <PropertyRef Name="HaulierId" />
+    </Key>
+    <Property Name="HaulierId" Type="int" Nullable="false" />
+    <Property Name="HaulierCode" Type="nchar" MaxLength="10" />
+    <Property Name="HaulierName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Trailer">
+    <Key>
+      <PropertyRef Name="TrailerId" />
+    </Key>
+    <Property Name="TrailerId" Type="int" Nullable="false" />
+    <Property Name="TrailerCode" Type="nchar" MaxLength="10" />
+    <Property Name="TrailerName" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TrailerNoList">
+    <Key>
+      <PropertyRef Name="TrailerId" />
+    </Key>
+    <Property Name="TrailerId" Type="int" Nullable="false" />
+    <Property Name="TrailerCompanyId" Type="int" Nullable="false" />
+    <Property Name="TrailerNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="CreatorID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateID" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TrailerNoMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TrailerCompany" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Entrydate" Type="datetime" />
+  </EntityType>
+</Schema>

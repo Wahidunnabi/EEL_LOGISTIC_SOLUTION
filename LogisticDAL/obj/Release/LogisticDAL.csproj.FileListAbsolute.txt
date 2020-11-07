@@ -1,0 +1,5 @@
+E:\EEL_LOGISTIC\LogisticDAL\bin\Release\LogisticDAL.dll.config
+E:\EEL_LOGISTIC\LogisticDAL\bin\Release\LogisticDAL.dll
+E:\EEL_LOGISTIC\LogisticDAL\bin\Release\LogisticDAL.pdb
+E:\EEL_LOGISTIC\LogisticDAL\obj\Release\LogisticDAL.dll
+E:\EEL_LOGISTIC\LogisticDAL\obj\Release\LogisticDAL.pdb
